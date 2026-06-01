@@ -1,0 +1,2089 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Karijere · Modulaz Group</title>
+<meta name="description" content="Otvorene pozicije u Modulazu — tvornica u Donjoj Dubravi, ured u Donjem Kraljevcu, praona u Zagrebu. Proizvodimo za Lidl, Kaufland i Spar. Pridruži nam se." />
+<meta property="og:title" content="Karijere · Modulaz Group" />
+<meta property="og:description" content="300.000 litara dnevno iz Donje Dubrave za Lidl, Kaufland i Spar. Tvoj sljedeći posao je 15 minuta od kuće." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts: Europa local -->
+<style>
+  @font-face { font-family: "Europa"; src: url("fonts/EuropaLight.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Europa"; src: url("fonts/EuropaLightItalic.ttf") format("truetype"); font-weight: 300; font-style: italic; font-display: swap; }
+  @font-face { font-family: "Europa"; src: url("fonts/EuropaRegular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Europa"; src: url("fonts/EuropaRegularItalic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+  @font-face { font-family: "Europa"; src: url("fonts/EuropaBold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Europa"; src: url("fonts/EuropaBoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: swap; }
+</style>
+
+<style>
+  /* ----------------------------------------------------------
+     TOKENI
+     ---------------------------------------------------------- */
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f7f8f7;
+    --ink: #0a0a0a;
+    --ink-2: #0a0a0a;
+    --ink-3: #0a0a0a;
+    --line: #e8e8e8;
+    --mint: #bfffca;
+    --mint-deep: #2f6b3e;
+    --mint-soft: #ecfff0;
+    --maxw: 1320px;
+    --pad: clamp(20px, 4vw, 56px);
+
+    --f-display: "Europa", system-ui, sans-serif;
+    --f-body: "Europa", system-ui, sans-serif;
+    --f-mono: "Europa", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--f-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ----------------------------------------------------------
+     SUBTILNI BACKGROUND PATTERN (točkasti grid kao mikroskop)
+     ---------------------------------------------------------- */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image: radial-gradient(circle, #00000008 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); position: relative; z-index: 1; }
+  section { position: relative; z-index: 1; }
+
+  /* Section header — žuta traka puna širina */
+  .sec-head {
+    display: flex; align-items: center; gap: 10px;
+    background: #FAFFD6;
+    border-bottom: 2px solid var(--ink);
+    padding: 13px var(--pad);
+    margin-top: 64px;
+    margin-bottom: 44px;
+    margin-left: calc(-1 * var(--pad));
+    margin-right: calc(-1 * var(--pad));
+  }
+  .sec-head .num {
+    font-family: var(--f-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+  }
+  .sec-head .name {
+    font-family: var(--f-body);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+  }
+  .sec-head .name::before { content: none; }
+
+  h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+  h2 { font-size: clamp(32px, 5vw, 68px); margin-bottom: 24px; }
+  h3 { font-size: clamp(22px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.38px; }
+  em { font-style: normal; }
+
+  p { font-size: 16.5px; color: var(--ink-2); }
+  .lead { font-size: clamp(18px, 1.5vw, 22px); color: var(--ink); max-width: 62ch; line-height: 1.5; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ----------------------------------------------------------
+     NAVIGACIJA
+     ---------------------------------------------------------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 18px var(--pad);
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .brand { display: flex; align-items: center; }
+  .brand-logo {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex; gap: 28px; align-items: center;
+    font-family: var(--f-mono); font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  .nav-links a { color: var(--ink-2); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links .lang { color: var(--ink-3); }
+  .nav-links .lang a.active { color: var(--ink); }
+
+  .nav-cta {
+    font-family: var(--f-body); font-size: 12px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    padding: 10px 18px;
+    border: 3px solid var(--ink);
+    border-radius: 0;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+  }
+
+  /* ----------------------------------------------------------
+     HERO
+     ---------------------------------------------------------- */
+  .hero {
+    padding: clamp(60px, 10vw, 140px) 0 clamp(60px, 8vw, 120px);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 820px;
+  }
+
+  .hero-tag {
+    font-family: var(--f-mono); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--ink-3);
+    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .hero-tag::before {
+    content: ""; width: 30px; height: 1px; background: var(--ink-3);
+  }
+  .hero h1 {
+    font-size: clamp(46px, 8vw, 112px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+  }
+  .hero h1 .accent {
+    color: var(--mint-deep);
+    position: relative;
+  }
+  .hero h1 .underline-mint {
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 .underline-mint::after {
+    content: "";
+    position: absolute;
+    left: -2px; right: -2px; bottom: 0.08em;
+    height: 0.34em;
+    background: var(--mint);
+    z-index: -1;
+  }
+  .hero-sub {
+    margin-top: 36px;
+    font-size: clamp(17px, 1.4vw, 20px);
+    color: var(--ink-2);
+    max-width: 48ch;
+    line-height: 1.55;
+  }
+  .hero-cta {
+    margin-top: 44px;
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn {
+    font-family: var(--f-body); font-size: 12.5px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    padding: 16px 26px;
+    border-radius: 0;
+    border: 3px solid var(--ink);
+    background: var(--ink); color: var(--bg);
+    cursor: pointer;
+    transition: all .2s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn:hover { background: var(--mint-deep); border-color: var(--mint-deep); }
+  .btn-ghost {
+    background: transparent; color: var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--bg); }
+  .btn .arr {
+    display: inline-block; transition: transform .25s;
+  }
+  .btn:hover .arr { transform: translateX(4px); }
+
+  /* HERO VISUAL — molekulske točke */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: linear-gradient(180deg, var(--mint-soft) 0%, #fff 70%);
+    overflow: hidden;
+  }
+  .hero-visual::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 30% 40%, var(--mint) 0, transparent 30%),
+                      radial-gradient(circle at 75% 65%, #d4ffdb 0, transparent 25%);
+    opacity: 0.8;
+  }
+  .hero-visual .badge {
+    position: absolute; top: 24px; left: 24px;
+    font-family: var(--f-mono); font-size: 11.5px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mint-deep);
+    z-index: 2;
+  }
+  .hero-visual .big-num {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--f-display);
+    font-size: clamp(80px, 14vw, 200px);
+    color: var(--ink);
+    z-index: 2;
+    letter-spacing: -0.03em;
+  }
+  .hero-visual .big-num small {
+    font-family: var(--f-mono); font-size: 14px;
+    font-style: normal; color: var(--ink-2);
+    margin-left: -10px; align-self: flex-end; padding-bottom: 36px;
+    letter-spacing: 0.1em;
+  }
+  .hero-visual .caption {
+    position: absolute; bottom: 24px; left: 24px; right: 24px;
+    font-family: var(--f-mono); font-size: 11.5px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-2);
+    z-index: 2;
+    line-height: 1.5;
+  }
+
+  /* Floating molecule SVG dekoracija */
+  .molecule {
+    position: absolute;
+    opacity: 0.4;
+    z-index: 1;
+  }
+
+  /* ----------------------------------------------------------
+     BROJKE
+     ---------------------------------------------------------- */
+  .stats {
+    padding: 0 0 100px;
+    border-bottom: 1px solid var(--line);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 28px;
+  }
+  .stat {
+    padding: 36px 24px;
+    border-left: 1px solid var(--line);
+    position: relative;
+  }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat .v {
+    font-family: var(--f-display);
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat .v em { color: var(--mint-deep); }
+  .stat .l {
+    margin-top: 14px;
+    font-family: var(--f-mono); font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-2);
+  }
+  @media (max-width: 860px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(3) { border-left: none; padding-left: 0; padding-top: 36px; border-top: 1px solid var(--line); }
+    .stat:nth-child(4) { padding-top: 36px; border-top: 1px solid var(--line); }
+  }
+
+  .marquee {
+    margin-top: 56px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--f-mono); font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--ink-2);
+  }
+  .marquee-track {
+    display: inline-flex; gap: 56px;
+    animation: scroll 28s linear infinite;
+  }
+  .marquee-track span::after { content: " ·"; color: var(--mint-deep); margin-left: 24px; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ----------------------------------------------------------
+     ZAŠTO MODULAZ — 4 stupa
+     ---------------------------------------------------------- */
+  .why {
+    padding-bottom: 120px;
+    border-bottom: 1px solid var(--line);
+  }
+  .why-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: end;
+    margin-bottom: 64px;
+  }
+  @media (max-width: 860px) { .why-intro { grid-template-columns: 1fr; } }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .why-grid { grid-template-columns: 1fr; } }
+  .pillar {
+    background: var(--bg);
+    padding: 44px 36px;
+    display: flex; flex-direction: column; gap: 16px;
+    transition: background .2s;
+    position: relative;
+  }
+  .pillar:hover { background: var(--mint-soft); }
+  .pillar .p-num {
+    font-family: var(--f-mono); font-size: 12px;
+    color: var(--ink-3); letter-spacing: 0.14em;
+  }
+  .pillar h3 { font-size: clamp(28px, 3vw, 40px); }
+  .pillar h3 em { color: var(--mint-deep); }
+  .pillar p { font-size: 15.5px; color: var(--ink-2); margin-top: 6px; }
+  .pillar ul { margin-top: 14px; padding-left: 0; list-style: none; }
+  .pillar ul li {
+    font-size: 14.5px; color: var(--ink-2);
+    padding: 8px 0; border-top: 1px dashed var(--line);
+    display: flex; gap: 12px;
+  }
+  .pillar ul li::before {
+    content: "—"; color: var(--mint-deep); flex-shrink: 0;
+  }
+
+  /* ----------------------------------------------------------
+     LOKACIJE
+     ---------------------------------------------------------- */
+  .locations {
+    padding-bottom: 120px;
+    border-bottom: 1px solid var(--line);
+  }
+  .loc-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.6fr;
+    gap: 24px;
+  }
+  @media (max-width: 980px) { .loc-grid { grid-template-columns: 1fr; } }
+  .loc {
+    border: 3px solid var(--ink);
+    border-radius: 0;
+    padding: 32px;
+    background: var(--bg);
+    display: flex; flex-direction: column; gap: 16px;
+    transition: all .25s;
+    min-height: 380px;
+  }
+  .loc:hover { background: var(--bg-soft); }
+  .loc.primary {
+    background: linear-gradient(180deg, #ECFFF0 0%, #FFFFFF 60%);
+  }
+  .loc-tag {
+    font-family: var(--f-display); font-size: 11.5px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.84px;
+    color: var(--mint-deep);
+    display: inline-flex; align-items: center; gap: 10px;
+    width: fit-content;
+  }
+  .loc-tag::before {
+    content: ""; width: 8px; height: 8px; border-radius: 0;
+    background: var(--mint-deep);
+  }
+  .loc h3 { font-size: 32px; font-weight: 700; letter-spacing: -0.38px; }
+  .loc .addr {
+    font-family: var(--f-mono); font-size: 13px;
+    color: var(--ink-2); margin-top: 4px;
+  }
+  .loc p { flex-grow: 1; font-size: 15px; line-height: 1.55; }
+  .loc .loc-meta {
+    margin-top: 16px;
+    display: flex; gap: 18px; flex-wrap: wrap;
+    font-family: var(--f-mono); font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: 1.38px;
+    color: var(--ink);
+  }
+  .loc .loc-meta b { color: var(--ink); font-weight: 500; }
+
+  /* ----------------------------------------------------------
+     POZICIJE
+     ---------------------------------------------------------- */
+  .positions { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .pos-filters {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin: 20px 0 36px;
+  }
+  .filter {
+    font-family: var(--f-body); font-size: 11.5px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    padding: 10px 18px;
+    border: 3px solid var(--line);
+    background: var(--bg); color: var(--ink-2);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .filter:hover { border-color: var(--ink); color: var(--ink); }
+  .filter.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .filter:hover { border-color: var(--ink); color: var(--ink); }
+  .filter.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .filter .count {
+    margin-left: 8px; padding-left: 8px;
+    border-left: 1px solid currentColor;
+    opacity: 0.6;
+  }
+
+  .pos-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .pos {
+    border-bottom: 1px solid var(--line);
+    padding: 28px 4px;
+    display: grid;
+    grid-template-columns: 60px 1.2fr 1fr 0.8fr auto;
+    gap: 24px;
+    align-items: center;
+    cursor: pointer;
+    transition: padding .2s, background .2s;
+    position: relative;
+  }
+  .pos:hover { background: var(--bg-soft); padding-left: 16px; padding-right: 16px; }
+  .pos.open { background: var(--bg-soft); padding-left: 16px; padding-right: 16px; }
+  .pos .p-id {
+    font-family: var(--f-mono); font-size: 13px; color: var(--ink-3);
+    letter-spacing: 0.08em;
+  }
+  .pos .p-title {
+    font-family: var(--f-display); font-size: clamp(22px, 2.2vw, 30px);
+    line-height: 1.15;
+  }
+  .pos .p-loc {
+    font-family: var(--f-mono); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-2);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .pos .p-loc::before {
+    content: ""; width: 6px; height: 6px; border-radius: 0;
+    background: var(--mint-deep);
+  }
+  .pos .p-type {
+    font-family: var(--f-mono); font-size: 12px;
+    color: var(--ink-2);
+    letter-spacing: 0.06em;
+  }
+  .pos .p-chev {
+    font-family: var(--f-mono); font-size: 18px; color: var(--ink-3);
+    transition: transform .25s;
+  }
+  .pos.open .p-chev { transform: rotate(45deg); color: var(--ink); }
+
+  .pos-body {
+    display: none;
+    grid-column: 1 / -1;
+    padding: 20px 0 24px;
+    border-top: 1px dashed var(--line);
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .pos.open .pos-body { display: grid; }
+  @media (max-width: 820px) {
+    .pos { grid-template-columns: 50px 1fr auto; }
+    .pos .p-loc, .pos .p-type { display: none; }
+    .pos-body { grid-template-columns: 1fr; }
+  }
+  .pos-body h4 {
+    font-family: var(--f-mono); font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .pos-body ul { padding-left: 0; list-style: none; }
+  .pos-body ul li {
+    padding: 7px 0; font-size: 15px;
+    color: var(--ink-2);
+    display: flex; gap: 12px;
+    border-top: 1px dashed var(--line);
+  }
+  .pos-body ul li:first-child { border-top: none; }
+  .pos-body ul li::before { content: "—"; color: var(--mint-deep); flex-shrink: 0; }
+  .pos-body .apply-row {
+    grid-column: 1 / -1;
+    display: flex; gap: 14px; align-items: center;
+    margin-top: 16px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--line);
+    flex-wrap: wrap;
+  }
+  .pos-body .apply-row p {
+    font-family: var(--f-mono); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-3);
+  }
+
+  /* ----------------------------------------------------------
+     ŽIVOT
+     ---------------------------------------------------------- */
+  .life { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .life-intro {
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px;
+    align-items: end; margin-bottom: 64px;
+  }
+  @media (max-width: 860px) { .life-intro { grid-template-columns: 1fr; } }
+
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
+  .quote {
+    border: 3px solid var(--ink);
+    border-radius: 0;
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 20px;
+    background: var(--bg);
+    transition: all .2s;
+  }
+  .quote:hover { background: var(--mint-soft); border-color: var(--mint-deep); }
+  .quote .q-mark {
+    font-family: var(--f-display);
+    font-size: 60px; line-height: 0.3; color: var(--mint-deep);
+    height: 24px;
+  }
+  .quote blockquote {
+    font-family: var(--f-display); font-size: 22px; line-height: 1.3;
+    flex-grow: 1;
+  }
+  .quote blockquote em { color: var(--mint-deep); }
+  .quote .who {
+    display: flex; gap: 14px; align-items: center;
+    border-top: 1px solid var(--line); padding-top: 18px;
+  }
+  .quote .av {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--mint-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--f-mono); font-size: 14px; font-weight: 500;
+    color: var(--mint-deep);
+    flex-shrink: 0;
+  }
+  .quote .who-info { line-height: 1.3; }
+  .quote .who-info .name { font-weight: 500; font-size: 14.5px; }
+  .quote .who-info .role {
+    font-family: var(--f-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--ink-3); margin-top: 2px;
+  }
+
+  .video-cta {
+    margin-top: 40px;
+    background: var(--ink); color: var(--bg);
+    border-radius: 0;
+    padding: 48px;
+    display: grid; grid-template-columns: 1fr auto; gap: 40px;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+  @media (max-width: 720px) { .video-cta { grid-template-columns: 1fr; padding: 32px; } }
+  .video-cta::before {
+    content: ""; position: absolute;
+    top: -40%; right: -10%; width: 60%; height: 180%;
+    background: radial-gradient(circle, var(--mint-deep) 0, transparent 60%);
+    opacity: 0.5;
+  }
+  .video-cta .vc-text { position: relative; z-index: 2; }
+  .video-cta h3 {
+    font-size: clamp(28px, 3vw, 44px); color: #fff; line-height: 1.1;
+  }
+  .video-cta h3 em { color: var(--mint); }
+  .video-cta p {
+    color: #ccc; margin-top: 12px; font-size: 16px; max-width: 50ch;
+  }
+  .video-cta .play {
+    position: relative; z-index: 2;
+    width: 88px; height: 88px; border-radius: 50%;
+    border: 1px solid #fff;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    cursor: pointer; transition: all .2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .video-cta .play:hover { background: var(--mint); color: var(--ink); border-color: var(--mint); transform: scale(1.05); }
+
+  /* ----------------------------------------------------------
+     FORMA
+     ---------------------------------------------------------- */
+  .apply { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .apply-grid {
+    display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+  @media (max-width: 860px) { .apply-grid { grid-template-columns: 1fr; } }
+  .apply-side h2 em { color: var(--mint-deep); }
+  .apply-side .checklist {
+    margin-top: 36px; padding: 0; list-style: none;
+  }
+  .apply-side .checklist li {
+    padding: 16px 0; border-top: 1px solid var(--line);
+    font-size: 15px; color: var(--ink-2);
+    display: flex; gap: 16px;
+  }
+  .apply-side .checklist li::before {
+    content: "01"; counter-increment: chk;
+    font-family: var(--f-mono); font-size: 11px;
+    color: var(--mint-deep); letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+  .apply-side .checklist { counter-reset: chk; }
+  .apply-side .checklist li::before { content: counter(chk, decimal-leading-zero); }
+
+  .form-card {
+    background: var(--bg-soft);
+    border: 3px solid var(--ink);
+    border-radius: 0;
+    padding: clamp(28px, 4vw, 44px);
+  }
+  .form-row { margin-bottom: 18px; }
+  .form-row.split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 540px) { .form-row.split { grid-template-columns: 1fr; } }
+  label {
+    display: block;
+    font-family: var(--f-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-2);
+    margin-bottom: 8px;
+  }
+  label .req { color: var(--mint-deep); }
+  input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    border-radius: 0;
+    font-family: var(--f-body); font-size: 15px;
+    color: var(--ink);
+    transition: border-color .2s;
+    -webkit-appearance: none; appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--mint-deep);
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  .file-input {
+    border: 1px dashed var(--line);
+    border-radius: 0;
+    padding: 22px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--bg);
+    transition: border-color .2s, background .2s;
+  }
+  .file-input:hover { border-color: var(--mint-deep); background: var(--mint-soft); }
+  .file-input input { display: none; }
+  .file-input .fi-txt {
+    font-family: var(--f-mono); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--ink-2);
+  }
+  .file-input .fi-hint { font-size: 12.5px; color: var(--ink-3); margin-top: 6px; }
+
+  .form-consent {
+    font-size: 13px; color: var(--ink-3); margin: 16px 0 24px;
+    line-height: 1.5;
+  }
+  .form-consent input { margin-right: 10px; transform: translateY(2px); }
+  .form-consent a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--mint); }
+
+  .form-submit {
+    width: 100%;
+    padding: 18px;
+    font-family: var(--f-body); font-size: 12.5px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    background: var(--ink); color: var(--bg);
+    border: 3px solid var(--ink); border-radius: 0;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .form-submit:hover { background: var(--mint-deep); }
+  .form-submit:disabled { opacity: 0.5; cursor: wait; }
+
+  .form-success, .form-error {
+    margin-top: 18px;
+    padding: 14px 18px; border-radius: 10px;
+    font-size: 14px;
+    display: none;
+  }
+  .form-success { background: var(--mint-soft); color: var(--mint-deep); border: 1px solid var(--mint); }
+  .form-error { background: #fff0f0; color: #a32a2a; border: 1px solid #ffcccc; }
+
+  /* Referral banner — отдельный CTA */
+  .referral {
+    margin-top: 80px;
+    border: 3px solid var(--ink);
+    border-radius: 0;
+    padding: 40px;
+    display: grid; grid-template-columns: 1fr auto; gap: 32px;
+    align-items: center;
+    background: linear-gradient(135deg, var(--mint-soft) 0%, #fff 60%);
+  }
+  @media (max-width: 720px) { .referral { grid-template-columns: 1fr; padding: 28px; } }
+  .referral h3 { font-size: clamp(22px, 2.4vw, 30px); }
+  .referral h3 em { color: var(--mint-deep); }
+  .referral p { font-size: 15px; margin-top: 8px; max-width: 56ch; }
+
+  /* ----------------------------------------------------------
+     FAQ
+     ---------------------------------------------------------- */
+  .faq { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .faq-intro { max-width: 640px; margin-bottom: 48px; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 24px 0;
+    cursor: pointer;
+  }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    font-family: var(--f-display); font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.25;
+  }
+  .faq-q .chev {
+    font-family: var(--f-mono); font-size: 16px; color: var(--ink-3);
+    transition: transform .25s;
+    flex-shrink: 0;
+  }
+  .faq-item.open .chev { transform: rotate(45deg); color: var(--mint-deep); }
+  .faq-a {
+    display: none;
+    margin-top: 16px;
+    font-size: 15.5px; color: var(--ink-2); line-height: 1.6;
+    max-width: 76ch;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ----------------------------------------------------------
+     FOOTER
+     ---------------------------------------------------------- */
+  footer {
+    padding: 80px 0 60px;
+    background: var(--ink); color: #d0d0d0;
+    position: relative; z-index: 1;
+  }
+  footer .f-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+    padding-bottom: 60px; border-bottom: 1px solid #222;
+  }
+  @media (max-width: 860px) { footer .f-grid { grid-template-columns: 1fr 1fr; } }
+  footer .f-brand .brand-name { color: #fff; font-size: 28px; }
+  footer .f-brand .brand-name span { color: var(--mint); }
+  footer .f-brand p { margin-top: 16px; color: #999; font-size: 14.5px; max-width: 36ch; }
+  footer h5 {
+    font-family: var(--f-mono); font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: #777; margin-bottom: 18px; font-weight: 500;
+  }
+  footer ul { list-style: none; padding: 0; }
+  footer ul li { margin-bottom: 10px; font-size: 14.5px; }
+  footer ul li a { color: #ccc; transition: color .2s; }
+  footer ul li a:hover { color: var(--mint); }
+  footer .copy {
+    padding-top: 30px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-family: var(--f-mono); font-size: 11.5px;
+    color: #666; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* ----------------------------------------------------------
+     Animacije
+     ---------------------------------------------------------- */
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  ::selection { background: var(--mint); color: var(--ink); }
+
+  /* ----------------------------------------------------------
+     TIM (unutar sekcije Život)
+     ---------------------------------------------------------- */
+  /* ----------------------------------------------------------
+     ODGOVORNOST / ODRŽIVOST
+     ---------------------------------------------------------- */
+  .sustain { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+
+  .sustain-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(32px, 5vw, 56px);
+    margin-bottom: 56px;
+  }
+  @media (max-width: 860px) { .sustain-cols { grid-template-columns: 1fr; gap: 40px; } }
+
+  .sustain-col .sc-icon {
+    width: 44px; height: 44px;
+    color: var(--ink);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .sustain-col h3 {
+    font-size: clamp(15px, 1.5vw, 18px);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+  .sustain-col p { font-size: 15px; color: var(--ink-2); line-height: 1.65; }
+
+  /* ----------------------------------------------------------
+     ODJELI — elegantni čipovi
+     ---------------------------------------------------------- */
+  .dept-chips {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 64px;
+  }
+  .dept-chip {
+    padding: 10px 20px;
+    font-family: var(--f-display); font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    border: 1px solid var(--line);
+    background: var(--bg-soft);
+    transition: background .2s, border-color .2s;
+  }
+  .dept-chip:hover { background: var(--mint-soft); border-color: var(--mint-deep); }
+
+  /* ----------------------------------------------------------
+     EXPORT BLOCK + PARTNER LOGOS
+     ---------------------------------------------------------- */
+  .export-block {
+    margin: 56px 0 0;
+    border-top: 1px solid var(--line);
+    padding-top: 48px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: center;
+  }
+  @media (max-width: 860px) { .export-block { grid-template-columns: 1fr; gap: 36px; } }
+
+  .export-claim {
+    font-family: var(--f-display);
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .export-claim em { color: var(--mint-deep); }
+
+  .export-nums {
+    display: flex; gap: 56px; align-items: flex-start;
+  }
+  .export-stat .ev {
+    font-family: var(--f-display);
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 700; line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .export-stat .ev em { color: var(--mint-deep); font-style: normal; }
+  .export-stat .el {
+    margin-top: 8px;
+    font-family: var(--f-body); font-size: 11px; font-weight: 300;
+    text-transform: uppercase; letter-spacing: 0.14em;
+  }
+
+  .partners-row {
+    margin-top: 40px;
+    display: flex; flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .partner-logo {
+    padding: 18px 32px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--f-display); font-size: 16px; font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    display: flex; align-items: center; justify-content: center;
+    min-width: 120px;
+  }
+
+  /* ----------------------------------------------------------
+     TIM STATS — odvojeni blok
+     ---------------------------------------------------------- */
+  .stats-team-wrap {
+    margin-top: 56px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+  .stats-team-label {
+    font-family: var(--f-body); font-size: 11.5px; font-weight: 300;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--ink); margin-bottom: 0;
+  }
+
+  /* ----------------------------------------------------------
+     DEPARTMENTS MINI-HEADING
+     ---------------------------------------------------------- */
+  .depts-block {
+    padding: 40px 0 48px;
+    border-top: 1px solid var(--line);
+  }
+  .depts-mini-head {
+    font-family: var(--f-body); font-size: 11.5px; font-weight: 300;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--ink); margin-bottom: 16px;
+  }
+
+  /* ----------------------------------------------------------
+     PHOTO GALLERY
+     ---------------------------------------------------------- */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: 280px 220px;
+    gap: 3px;
+    margin-bottom: 0;
+  }
+  @media (max-width: 860px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gal-wide, .gal-tall { grid-column: span 1 !important; grid-row: span 1 !important; }
+  }
+  @media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+  .gal-item {
+    overflow: hidden;
+    background: var(--bg-soft);
+    position: relative;
+  }
+  .gal-item img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .5s ease;
+  }
+  .gal-item:hover img { transform: scale(1.04); }
+  .gal-item .gal-label {
+    position: absolute; bottom: 14px; left: 14px;
+    font-family: var(--f-body); font-size: 10.5px; font-weight: 300;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 4px 10px;
+    backdrop-filter: blur(4px);
+  }
+  .gal-wide { grid-column: span 2; }
+  .gal-tall { grid-row: span 2; }
+
+  /* ----------------------------------------------------------
+     SUSTAIN PHOTO
+     ---------------------------------------------------------- */
+  .sustain-photo {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+  }
+  .sustain-photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .sustain-photo-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 56px 36px 28px;
+    background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 100%);
+    color: #fff;
+  }
+  .sustain-photo-label .sp-title {
+    font-family: var(--f-display); font-size: clamp(18px, 2vw, 26px);
+    font-weight: 700; letter-spacing: -0.01em; line-height: 1.2;
+  }
+  .sustain-photo-label .sp-sub {
+    margin-top: 6px;
+    font-family: var(--f-body); font-size: 12px; font-weight: 300;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--mint);
+  }
+
+  /* ----------------------------------------------------------
+     LOC PHOTO (primarna kartica s fotografijom)
+     ---------------------------------------------------------- */
+  .loc-has-photo {
+    padding: 0;
+  }
+  .loc-photo {
+    width: 100%; height: 200px; overflow: hidden; flex-shrink: 0;
+  }
+  .loc-photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .5s ease;
+  }
+  .loc-has-photo:hover .loc-photo img { transform: scale(1.04); }
+  .loc-body {
+    padding: 28px 32px 32px;
+    display: flex; flex-direction: column; gap: 16px; flex-grow: 1;
+  }
+
+  /* ----------------------------------------------------------
+     Europa Light — zamjena za JetBrains Mono
+     ---------------------------------------------------------- */
+  .nav-links, .nav-links a, .nav-links .lang,
+  .hero-tag,
+  .stat .l,
+  .marquee, .marquee-track,
+  .pillar .p-num,
+  .loc .addr, .loc .loc-meta,
+  .pos .p-id, .pos .p-loc, .pos .p-type, .pos .p-chev,
+  .pos-body h4,
+  .quote .av, .quote .who-info .role,
+  label, .file-input .fi-txt, .file-input .fi-hint,
+  .form-consent,
+  footer h5, footer .copy {
+    font-weight: 300;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <img src="arian-logo.svg" alt="Modulaz Group" class="brand-logo">
+    </a>
+    <nav class="nav-links">
+      <a href="#zasto">01 Zašto Modulaz</a>
+      <a href="#lokacije">02 Lokacije</a>
+      <a href="#pozicije">03 Pozicije</a>
+      <a href="#zivot">04 Život</a>
+      <a href="#odgovornost">05 Odgovornost</a>
+      <a href="#faq">06 FAQ</a>
+      <span class="lang"><a class="active" href="#">HR</a> / <a href="#">EN</a></span>
+    </nav>
+    <a href="#prijava" class="nav-cta">Prijavi se</a>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-tag">Karijere · Modulaz Group · od 2002.</div>
+        <h1>
+          Tvoj sljedeći<br>
+          <span class="underline-mint">posao</span> je <span class="accent">15 minuta</span><br>
+          od kuće.
+        </h1>
+        <p class="hero-sub">
+          300.000 litara dnevno iz Donje Dubrave. Za Lidl, Kaufland, Spar i još pedesetak partnera diljem Europe. Vjerojatno svaki dan koristiš nešto što smo proizveli — a možda nisi ni znao da smo tu.
+        </p>
+        <div class="hero-cta">
+          <a href="#pozicije" class="btn">Otvorene pozicije <span class="arr">→</span></a>
+          <a href="#zasto" class="btn btn-ghost">Zašto Modulaz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BROJKE ==================== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">00</span>
+      <span class="name">Brojke</span>
+    </div>
+    <!-- Poslovne brojke -->
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="v">22<em>+</em></div>
+        <div class="l">Godina iskustva</div>
+      </div>
+      <div class="stat">
+        <div class="v">4</div>
+        <div class="l">Proizvodne linije</div>
+      </div>
+      <div class="stat">
+        <div class="v">100<em>+</em></div>
+        <div class="l">Proizvoda u portfelju</div>
+      </div>
+      <div class="stat">
+        <div class="v">300<em>k</em></div>
+        <div class="l">Litara dnevno</div>
+      </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Lidl</span><span>Kaufland</span><span>Spar</span><span>INA</span><span>Tehnički aerosoli</span><span>Auto kozmetika</span><span>Sredstva za čišćenje</span><span>Dezinficijensi</span><span>Tekućine za vozila</span>
+        <span>Lidl</span><span>Kaufland</span><span>Spar</span><span>INA</span><span>Tehnički aerosoli</span><span>Auto kozmetika</span><span>Sredstva za čišćenje</span><span>Dezinficijensi</span><span>Tekućine za vozila</span>
+      </div>
+    </div>
+
+    <!-- Export + partneri -->
+    <div class="export-block">
+      <div class="export-claim">
+        Naši proizvodi izvoze se<br>u više od <em>35 zemalja</em><br>diljem Europe i svijeta.
+      </div>
+      <div class="export-nums">
+        <div class="export-stat">
+          <div class="ev">92<em>%</em></div>
+          <div class="el">Export</div>
+        </div>
+        <div class="export-stat">
+          <div class="ev">8<em>%</em></div>
+          <div class="el">Domaće tržište</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner logotipi -->
+    <div class="partners-row">
+      <div class="partner-logo">LIDL</div>
+      <div class="partner-logo">KAUFLAND</div>
+      <div class="partner-logo">SPAR</div>
+      <div class="partner-logo">INA</div>
+    </div>
+
+    <!-- Tim brojke — odvojeni blok -->
+    <div class="stats-team-wrap">
+      <div class="stats-team-label">Tim</div>
+      <div class="stats-grid" style="margin-top: 0; border-top: none;">
+        <div class="stat">
+          <div class="v">70</div>
+          <div class="l">Zaposlenika</div>
+        </div>
+        <div class="stat">
+          <div class="v">34<em> g.</em></div>
+          <div class="l">Prosječna dob</div>
+        </div>
+        <div class="stat">
+          <div class="v">60<em>%</em></div>
+          <div class="l">Zaposlenica</div>
+        </div>
+        <div class="stat">
+          <div class="v">87<em>%</em></div>
+          <div class="l">Stopa zadržavanja</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ZAŠTO MODULAZ ==================== -->
+<section class="why" id="zasto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">01</span>
+      <span class="name">Zašto Modulaz</span>
+    </div>
+
+    <!-- Naši odjeli -->
+    <div class="depts-block">
+      <div class="depts-mini-head">Naši odjeli</div>
+      <div class="dept-chips">
+        <span class="dept-chip">Logistika</span>
+        <span class="dept-chip">R&amp;D</span>
+        <span class="dept-chip">Skladište</span>
+        <span class="dept-chip">Supply chain</span>
+        <span class="dept-chip">Quality control</span>
+        <span class="dept-chip">Proizvodnja</span>
+        <span class="dept-chip">Računovodstvo</span>
+        <span class="dept-chip">Strategic project management</span>
+        <span class="dept-chip">Finances</span>
+        <span class="dept-chip">Design and packaging</span>
+        <span class="dept-chip">Prodaja i client relations</span>
+        <span class="dept-chip">Servisiranje i održavanje</span>
+        <span class="dept-chip">Order management</span>
+      </div>
+    </div>
+
+    <div class="why-intro">
+      <h2>Stabilna tvrtka. <em>Konkretni</em> uvjeti. Bez bajki.</h2>
+      <p class="lead">
+        Nećemo ti pričati o "mladom timu" i "dinamičnom okruženju". Reći ćemo ti što stvarno dobivaš — od prvog dana, na papiru i u praksi.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="pillar">
+        <div class="p-num">01</div>
+        <h3><em>Stabilnost</em> koja se ne ljulja</h3>
+        <p>Posao s redovnom plaćom u tvrtki koja raste 22 godine. Nismo start-up koji bi mogao nestati za 6 mjeseci.</p>
+        <ul>
+          <li>Ugovor na neodređeno nakon probnog rada</li>
+          <li>Plaća na vrijeme, svaki mjesec</li>
+          <li>Regres, božićnica, naknada za godišnji</li>
+          <li>Proizvodimo za Lidl, Kaufland, Spar — narudžbe stalne</li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="p-num">02</div>
+        <h3>Blizu <em>kuće</em>, ne preko granice</h3>
+        <p>Doma ručak. Doma djeca. Bez vožnje u Sloveniju ili Austriju i 3 sata dnevno na cesti.</p>
+        <ul>
+          <li>Tvornica u Donjoj Dubravi, ured u Donjem Kraljevcu</li>
+          <li>Organiziran prijevoz iz cijelog Međimurja</li>
+          <li>Topli obrok u tvornici</li>
+          <li>Smjene koje ne ubijaju vikend</li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="p-num">03</div>
+        <h3>Oprema <em>21. stoljeća</em></h3>
+        <p>Automatski sustavi doziranja, klimatizirana proizvodnja, oprema kojom rade najveći europski proizvođači. Ne radi se u rukavicama iz 1995.</p>
+        <ul>
+          <li>4 automatizirane proizvodne linije</li>
+          <li>Vlastiti R&amp;D laboratorij</li>
+          <li>Standardi za europske retailere</li>
+          <li>Zaštitna oprema osigurana</li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="p-num">04</div>
+        <h3><em>Razvoj</em> umjesto stagnacije</h3>
+        <p>Ulaziš kao operater — možeš izaći kao voditelj smjene. Ulaziš u laboratorij — možeš rasti u R&amp;D timu. Konkretno, ne na papiru.</p>
+        <ul>
+          <li>Interne edukacije i certifikati</li>
+          <li>Mogućnost prelaska između timova</li>
+          <li>Plaćeni certifikati za rad sa specifičnom opremom</li>
+          <li>Karijerni put unutar tvrtke</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOKACIJE ==================== -->
+<section class="locations" id="lokacije">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">02</span>
+      <span class="name">Gdje radimo</span>
+    </div>
+
+    <div class="why-intro" style="margin-bottom: 40px;">
+      <h2>Tri <em>lokacije</em>, jedan tim.</h2>
+      <p class="lead">Najveći dio ekipe je u tvornici u Donjoj Dubravi. Ured i praona u Zagrebu su manji, ali traže ljude jednako kao i tvornica.</p>
+    </div>
+
+    <div class="loc-grid">
+      <div class="loc primary loc-has-photo">
+        <div class="loc-photo">
+          <img src="photos/alfacare-zgrada.jpg" alt="Alfacare, Donja Dubrava" loading="lazy">
+        </div>
+        <div class="loc-body">
+          <span class="loc-tag">Tvornica · glavna lokacija</span>
+          <h3>Donja Dubrava</h3>
+          <div class="addr">3. travnja 58, Donja Dubrava · Međimurje</div>
+          <p>Srce Modulaza. 4 proizvodne linije, R&amp;D laboratorij, skladište. Tu se proizvodi 300.000 litara dnevno. Tu su operateri, voditelji smjena, tehnolozi, kemičari, skladištari, vozači viličara, ekipa kvalitete.</p>
+          <div class="loc-meta">
+            <span><b>Tip:</b> Proizvodnja · R&amp;D · Skladište</span>
+            <span><b>Smjene:</b> 1 · 2 · 3</span>
+            <span><b>Prijevoz:</b> Organiziran</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="loc-tag">Ured</span>
+        <h3>Zagreb, Sky Office</h3>
+        <div class="addr">HR-40320 Donji Kraljevec</div>
+        <p>Komercijala, nabava, financije, marketing, IT, HR. Manji tim, više odgovornosti po osobi. Idealno za ljude koji vole vidjeti cijeli proces od narudžbe do isporuke.</p>
+        <div class="loc-meta">
+          <span><b>Tip:</b> Administracija · Komercijala</span>
+          <span><b>Smjene:</b> 1</span>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="loc-tag">Praona</span>
+        <h3>Zagreb, Remetinec</h3>
+        <div class="addr">Automatska praona vozila</div>
+        <p>Manja jedinica u Zagrebu — trenutno traži ljude za rad na automatskoj praoni. Posao bez putovanja u Međimurje za one iz Zagreba.</p>
+        <div class="loc-meta">
+          <span><b>Tip:</b> Usluge</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== POZICIJE ==================== -->
+<section class="positions" id="pozicije">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">03</span>
+      <span class="name">Otvorene pozicije</span>
+    </div>
+
+    <div class="why-intro" style="margin-bottom: 24px;">
+      <h2>Tko nam <em>treba</em>.</h2>
+      <p class="lead">
+        Posloženo po lokacijama. Klikni poziciju za detalje i prijavu. Ako ne nalaziš sebe — javi se svejedno, uvijek tražimo dobre ljude.
+      </p>
+    </div>
+
+    <div class="pos-filters" id="pos-filters">
+      <!-- filteri se generiraju iz JS-a -->
+    </div>
+
+    <div class="pos-list" id="pos-list">
+      <!-- pozicije se generiraju iz JS-a -->
+    </div>
+
+    <!-- Referral CTA -->
+    <div class="referral">
+      <div>
+        <h3>Poznaješ nekoga tko bi nam pristajao?</h3>
+        <p>Preporuči ga. Ako se zaposli i ostane 3 mjeseca — dobiješ nagradu. Najjednostavnije zarađene novce u Modulazu.</p>
+      </div>
+      <a href="mailto:karijere@modulazgroup.com?subject=Preporuka%20kandidata" class="btn btn-ghost">Pošalji preporuku</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ŽIVOT U MODULAZU ==================== -->
+<section class="life" id="zivot">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">04</span>
+      <span class="name">Život u Modulazu</span>
+    </div>
+
+    <div class="life-intro">
+      <h2>Ljudi koji su <em>ostali</em>. I zašto.</h2>
+      <p class="lead">
+        Najbolji način da saznaš kako je raditi u Modulazu je da pitaš nekoga tko već radi. Evo nekoliko priča.
+      </p>
+    </div>
+
+    <div class="quotes" id="quotes"></div>
+
+    <!-- Galerija -->
+    <div class="gallery-grid" style="margin-top: 48px;">
+      <div class="gal-item gal-tall">
+        <img src="photos/operater-hmi-panel.jpg" alt="Operater na HMI panelu, linija proizvodnje" loading="lazy">
+        <span class="gal-label">Proizvodnja · HMI panel</span>
+      </div>
+      <div class="gal-item">
+        <img src="photos/tim-sastanak.jpg" alt="Tim Modulaz na sastanku" loading="lazy">
+        <span class="gal-label">Tim · Sastanak</span>
+      </div>
+      <div class="gal-item">
+        <img src="photos/laboratorij-mjerenje.jpg" alt="R&D laboratorij Modulaz" loading="lazy">
+        <span class="gal-label">R&amp;D · Laboratorij</span>
+      </div>
+      <div class="gal-item gal-wide">
+        <img src="photos/alfacare-brake-cleaner-linija.jpg" alt="Linija punjenja Alfacare Brake Cleaner" loading="lazy">
+        <span class="gal-label">Linija proizvodnje · Alfacare</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ODGOVORNOST ==================== -->
+<section class="sustain" id="odgovornost">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">05</span>
+      <span class="name">Naša odgovornost</span>
+    </div>
+
+    <div class="why-intro" style="margin-bottom: 52px;">
+      <h2>Poslujemo <em>odgovorno</em>.</h2>
+      <p class="lead">Briga o okolišu nije marketinška priča — ugrađena je u to kako svaki dan radimo, od energije do ambalaže.</p>
+    </div>
+
+    <div class="sustain-cols">
+      <div class="sustain-col">
+        <h3>Solarna energija</h3>
+        <p>Operiramo solarnim sustavom snage 100 kW koji pokriva dio naše energetske potražnje za proizvodnju, štedeći oko 42 metričke tone CO₂ godišnje.</p>
+      </div>
+
+      <div class="sustain-col">
+        <h3>Recikliranje i ambalaža</h3>
+        <p>Koristimo reciklirani PET u plastičnoj ambalaži i FSC-certificirane kartonske kutije, smanjujući plastični otpad i podržavajući odgovornu sječnju šuma.</p>
+      </div>
+
+      <div class="sustain-col">
+        <h3>Električni transport</h3>
+        <p>Koristimo električne shuttle autobuse za prijevoz zaposlenika, a većina naše korporativne flote je električna — za čišću mobilnost svakog dana.</p>
+      </div>
+    </div>
+
+    <!-- Foto tvornice iz zraka — solarni paneli -->
+    <div class="sustain-photo">
+      <img src="photos/tvornica-iz-zraka-solari.jpg" alt="Tvornica Modulaz iz zraka — solarni paneli na krovu" loading="lazy">
+      <div class="sustain-photo-label">
+        <div>
+          <div class="sp-title">100 kW solarnih panela na krovu tvornice</div>
+          <div class="sp-sub">Donja Dubrava · štednja ~42 t CO₂ godišnje</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== PRIJAVA ==================== -->
+<section class="apply" id="prijava">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">06</span>
+      <span class="name">Prijavi se</span>
+    </div>
+
+    <div class="apply-grid">
+      <div class="apply-side">
+        <h2>Pošalji prijavu. <em>Bez kompliciranja.</em></h2>
+        <p class="lead">Forma traje 2 minute. Ne tražimo motivacijska pisma od 3 stranice. Tražimo CV i broj telefona.</p>
+
+        <ul class="checklist">
+          <li>Popuni formu — ime, telefon, e-mail, pozicija</li>
+          <li>Dodaj CV (PDF, Word ili slikan papirnati)</li>
+          <li>Zovemo te unutar 5 radnih dana</li>
+          <li>Razgovor u tvornici ili online — kako tebi paše</li>
+        </ul>
+      </div>
+
+      <form class="form-card" id="apply-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+        <div class="form-row split">
+          <div>
+            <label>Ime <span class="req">*</span></label>
+            <input type="text" name="ime" required />
+          </div>
+          <div>
+            <label>Prezime <span class="req">*</span></label>
+            <input type="text" name="prezime" required />
+          </div>
+        </div>
+        <div class="form-row split">
+          <div>
+            <label>Telefon <span class="req">*</span></label>
+            <input type="tel" name="telefon" required placeholder="+385" />
+          </div>
+          <div>
+            <label>E-mail <span class="req">*</span></label>
+            <input type="email" name="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Pozicija za koju se prijavljuješ <span class="req">*</span></label>
+          <select name="pozicija" id="form-pozicija" required>
+            <option value="">— odaberi poziciju —</option>
+            <option value="opcenito">Opća prijava (bilo koja pozicija)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>CV <span class="req">*</span></label>
+          <label class="file-input">
+            <input type="file" name="cv" accept=".pdf,.doc,.docx,.jpg,.png" required id="cv-input"/>
+            <div class="fi-txt" id="cv-label">+ Dodaj CV</div>
+            <div class="fi-hint">PDF, Word ili slika · do 10 MB</div>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Poruka <span style="color:var(--ink-3); text-transform: none; letter-spacing: 0; font-weight: 400;">(opcionalno)</span></label>
+          <textarea name="poruka" placeholder="Ako želiš, napiši nam nešto o sebi — što tražiš, kad možeš početi, što te zanima."></textarea>
+        </div>
+
+        <div class="form-consent">
+          <input type="checkbox" name="suglasnost" id="consent" required />
+          <label for="consent" style="display: inline; font-family: var(--f-body); text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--ink-3);">
+            Slažem se s obradom osobnih podataka u svrhu zapošljavanja sukladno <a href="#">Pravilima privatnosti</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="form-submit">Pošalji prijavu →</button>
+        <div class="form-success">Prijava poslana! Javit ćemo ti se uskoro.</div>
+        <div class="form-error">Greška pri slanju. Pokušaj ponovno ili nam piši na <a href="mailto:karijere@modulazgroup.com">karijere@modulazgroup.com</a>.</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">07</span>
+      <span class="name">Često pitana pitanja</span>
+    </div>
+    <div class="faq-intro">
+      <h2>Ono što <em>svi pitaju</em>.</h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="brand-name">Modulaz <span>karijere</span></div>
+        <p>Modulaz Group d.o.o. — proizvođač tehničkih aerosola, auto kozmetike, sredstava za čišćenje i dezinficijensa. Od 2002.</p>
+      </div>
+      <div>
+        <h5>Lokacije</h5>
+        <ul>
+          <li>Tvornica · Donja Dubrava</li>
+          <li>Ured · Donji Kraljevec</li>
+          <li>Praona · Zagreb</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Linkovi</h5>
+        <ul>
+          <li><a href="https://modulazgroup.com">modulazgroup.com</a></li>
+          <li><a href="#pozicije">Otvorene pozicije</a></li>
+          <li><a href="#prijava">Prijavi se</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:karijere@modulazgroup.com">karijere@modulazgroup.com</a></li>
+          <li><a href="tel:+38540688225">+385 40 688 225</a></li>
+          <li><a href="https://www.facebook.com/Modulaz-group-102747852180440">Facebook</a></li>
+          <li><a href="https://www.linkedin.com/company/modulaz-group">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Modulaz Group d.o.o.</span>
+      <span>The Atoms we're Made Of</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== KONFIGURACIJA + LOGIKA ==================== -->
+<script>
+/* ============================================================
+   SVE ŠTO MIJENJAŠ KAD SE OTVORI NOVA POZICIJA ILI SE PROMIJENI
+   SADRŽAJ — JE TU. NE TREBA NIŠTA DRUGO DIRATI.
+   ============================================================ */
+
+const POSITIONS = [
+  {
+    id: "operater-linije",
+    title: "Operater na proizvodnoj liniji",
+    location: "tvornica",         // "tvornica" | "ured" | "praona"
+    type: "Puno radno vrijeme · 3 smjene",
+    summary: "Vođenje proizvodne linije — kontrola doziranja, pakiranja i kvalitete šarže.",
+    responsibilities: [
+      "Rad na automatiziranoj proizvodnoj liniji",
+      "Kontrola doziranja, pakiranja i etiketiranja",
+      "Vođenje proizvodne dokumentacije",
+      "Suradnja s voditeljem smjene i kontrolom kvalitete"
+    ],
+    requirements: [
+      "SSS strojarske, kemijske ili srodne struke (prednost, nije uvjet)",
+      "Spremnost na rad u smjenama",
+      "Odgovornost, preciznost, sposobnost timskog rada",
+      "Bez iskustva — uvodimo te u posao"
+    ]
+  },
+  {
+    id: "voditelj-smjene",
+    title: "Voditelj smjene",
+    location: "tvornica",
+    type: "Puno radno vrijeme · 3 smjene",
+    summary: "Vođenje proizvodne smjene — koordinacija ekipe, plana proizvodnje i kvalitete.",
+    responsibilities: [
+      "Koordinacija rada operatera na 1-2 linije",
+      "Praćenje plana proizvodnje i izvještavanje",
+      "Komunikacija s kontrolom kvalitete i tehnologijom",
+      "Briga o sigurnosti i radnim standardima"
+    ],
+    requirements: [
+      "Iskustvo u proizvodnji (poželjno kao operater ili voditelj)",
+      "Sposobnost vođenja tima 5-10 ljudi",
+      "SSS / VŠS",
+      "Osnove rada na računalu"
+    ]
+  },
+  {
+    id: "tehnolog",
+    title: "Tehnolog proizvodnje",
+    location: "tvornica",
+    type: "Puno radno vrijeme · 1 smjena",
+    summary: "Razvoj i optimizacija proizvodnih receptura, podrška proizvodnji.",
+    responsibilities: [
+      "Razvoj novih i optimizacija postojećih receptura",
+      "Rad s laboratorijem i kontrolom kvalitete",
+      "Tehnička dokumentacija i SOP-ovi",
+      "Podrška proizvodnji kod uvođenja novih proizvoda"
+    ],
+    requirements: [
+      "VSS kemija, kemijsko inženjerstvo ili srodno",
+      "Iskustvo u proizvodnoj industriji (prednost)",
+      "Engleski jezik — aktivno",
+      "Analitičko razmišljanje, sistematičnost"
+    ]
+  },
+  {
+    id: "skladistar",
+    title: "Skladištar",
+    location: "tvornica",
+    type: "Puno radno vrijeme · 1-2 smjene",
+    summary: "Prijem, izdavanje i evidencija robe u skladištu sirovina i gotovih proizvoda.",
+    responsibilities: [
+      "Prijem ulazne robe i kontrola dokumentacije",
+      "Pakiranje i priprema isporuka",
+      "Rad u WMS sustavu",
+      "Inventura i redovni popis"
+    ],
+    requirements: [
+      "SSS, iskustvo u skladištu prednost",
+      "Dozvola za viličar (može i nakon zapošljavanja — plaćamo edukaciju)",
+      "Računalna pismenost (osnove)",
+      "Spremnost na fizički posao"
+    ]
+  },
+  {
+    id: "vozac-vilicar",
+    title: "Vozač viličara",
+    location: "tvornica",
+    type: "Puno radno vrijeme · 1-2 smjene",
+    summary: "Pretovar paleta unutar tvornice — skladište sirovina, linije, gotovi proizvodi.",
+    responsibilities: [
+      "Pretovar paleta s viličarom unutar skladišta i pogona",
+      "Suradnja sa skladištarima i operaterima",
+      "Briga o opremi i sigurnosti"
+    ],
+    requirements: [
+      "Važeća dozvola za viličar",
+      "Iskustvo u sličnom poslu (prednost)",
+      "Pažljivost, odgovornost"
+    ]
+  },
+  {
+    id: "kontrola-kvalitete",
+    title: "Specijalist kontrole kvalitete (QC)",
+    location: "tvornica",
+    type: "Puno radno vrijeme · 1 smjena",
+    summary: "Kontrola kvalitete sirovina i gotovih proizvoda u laboratoriju.",
+    responsibilities: [
+      "Uzorkovanje i analiza sirovina i šarži",
+      "Vođenje QC dokumentacije",
+      "Suradnja s proizvodnjom i tehnologijom",
+      "Praćenje standarda za europske retailere"
+    ],
+    requirements: [
+      "VSS / VŠS kemija ili srodno",
+      "Iskustvo u laboratoriju (prednost)",
+      "Sistematičnost, pažnja na detalje",
+      "Engleski jezik"
+    ]
+  },
+  {
+    id: "rd-kemicar",
+    title: "R&D kemičar",
+    location: "tvornica",
+    type: "Puno radno vrijeme · 1 smjena",
+    summary: "Razvoj novih proizvoda u R&D timu — od ideje do gotove formule.",
+    responsibilities: [
+      "Razvoj novih formulacija (čistila, aerosoli, auto kozmetika, dezinficijensi)",
+      "Eksperimentalni rad u laboratoriju",
+      "Suradnja s tehnologijom kod scale-upa",
+      "Praćenje EU regulative i industrije"
+    ],
+    requirements: [
+      "VSS kemija / kemijsko inženjerstvo",
+      "Iskustvo u R&D-u (prednost, nije uvjet za junior poziciju)",
+      "Engleski — aktivno (čitanje stručne literature)",
+      "Znatiželja i sistematičnost"
+    ]
+  },
+  {
+    id: "scm-specijalist",
+    title: "Specijalist nabave (SCM)",
+    location: "ured",
+    type: "Puno radno vrijeme · 1 smjena",
+    summary: "Nabava sirovina i ambalaže — od dobavljača do dostave u tvornicu.",
+    responsibilities: [
+      "Pregovaranje s dobavljačima sirovina i ambalaže",
+      "Planiranje nabave po proizvodnom planu",
+      "Praćenje cijena i tržišta",
+      "Suradnja s tehnologijom i proizvodnjom"
+    ],
+    requirements: [
+      "VSS ekonomija / SCM / srodno",
+      "Iskustvo u nabavi (prednost u proizvodnji)",
+      "Engleski — aktivno",
+      "Pregovaračke vještine, analitičnost"
+    ]
+  },
+  {
+    id: "komercijalist",
+    title: "Komercijalist (key account)",
+    location: "ured",
+    type: "Puno radno vrijeme · 1 smjena",
+    summary: "Razvoj odnosa s ključnim kupcima — europski retaileri i partneri.",
+    responsibilities: [
+      "Razvoj odnosa s ključnim kupcima (Lidl, Kaufland, Spar, dr.)",
+      "Priprema ponuda i pregovori",
+      "Praćenje narudžbi i isporuka",
+      "Putovanja na sajmove i kod kupaca (povremeno)"
+    ],
+    requirements: [
+      "VSS",
+      "Iskustvo u B2B prodaji ili key account-u",
+      "Engleski jezik — fluentno (njemački prednost)",
+      "Komunikativnost, izvršnost"
+    ]
+  },
+  {
+    id: "administrativni-referent",
+    title: "Administrativni referent",
+    location: "ured",
+    type: "Puno radno vrijeme · 1 smjena",
+    summary: "Administrativna podrška uredu — dokumentacija, korespondencija, organizacija.",
+    responsibilities: [
+      "Vođenje administrativne dokumentacije",
+      "Priprema ponuda, narudžbi, izvještaja",
+      "Komunikacija s dobavljačima i kupcima",
+      "Organizacija interna i koordinacija"
+    ],
+    requirements: [
+      "SSS / VŠS",
+      "MS Office (Word, Excel) — solidno",
+      "Engleski — pasivno minimalno",
+      "Urednost, samostalnost"
+    ]
+  },
+  {
+    id: "praonik",
+    title: "Djelatnik na automatskoj praoni",
+    location: "praona",
+    type: "Puno radno vrijeme · 1-2 smjene",
+    summary: "Rad na automatskoj praoni vozila u Zagrebu — primanje gostiju, vođenje praonice, briga o opremi.",
+    responsibilities: [
+      "Primanje i naplata usluga",
+      "Vođenje automatske linije i kontrola kvalitete pranja",
+      "Briga o opremi i potrošnom materijalu",
+      "Komunikacija s gostima"
+    ],
+    requirements: [
+      "SSS — bilo koje smjer",
+      "Spremnost na rad u smjenama",
+      "Komunikativnost, urednost",
+      "Bez iskustva — uvodimo te u posao"
+    ]
+  }
+];
+
+const TESTIMONIALS = [
+  {
+    initials: "PK",
+    name: "Petar K.",
+    role: "Voditelj smjene · 8 godina u Modulazu",
+    quote: "Krenuo sam kao operater na liniji 2. Danas vodim smjenu od 12 ljudi. <em>Bez fakulteta</em> — samo s voljom i ekipom koja te uči."
+  },
+  {
+    initials: "AŠ",
+    name: "Ana Š.",
+    role: "Tehnolog · 4 godine",
+    quote: "Završila sam kemiju i mislila da moram u Zagreb. Modulaz je 20 minuta od mojeg sela. <em>Ručak doma</em>, a posao u struci."
+  },
+  {
+    initials: "MN",
+    name: "Marko N.",
+    role: "Skladištar · 5 godina",
+    quote: "Prije Modulaza sam vozio do Slovenije, 2 sata dnevno na cesti. Sad sam <em>doma za 15 minuta</em>. To je promijenilo sve."
+  }
+];
+
+const FAQS = [
+  {
+    q: "Koliko se čeka odgovor nakon prijave?",
+    a: "Zovemo unutar 5 radnih dana. Ako se javljaš za otvorenu poziciju, najčešće je to brže. Ako ne dobiješ poziv u 5 dana — pošalji nam e-mail na karijere@modulazgroup.com i sigurno ćemo provjeriti gdje je zapelo."
+  },
+  {
+    q: "Koje smjene radite?",
+    a: "Tvornica radi u 3 smjene (prva, druga, treća). U administraciji i komercijali je samo prva smjena. Praona u Zagrebu je u 1-2 smjene ovisno o sezoni. Za smjenski rad postoje dodaci sukladno zakonu."
+  },
+  {
+    q: "Imate li organiziran prijevoz?",
+    a: "Da. Organiziran je prijevoz iz cijelog Međimurja do tvornice u Donjoj Dubravi. Za one koji koriste vlastiti prijevoz isplaćuje se naknada."
+  },
+  {
+    q: "Treba li mi iskustvo za rad na liniji?",
+    a: "Ne. Većina naših operatera je krenula bez iskustva. Imamo strukturiran uvod u posao — prvi tjedan radiš uz iskusnog operatera, drugi tjedan pod njegovim nadzorom, a tek onda samostalno."
+  },
+  {
+    q: "Što sve dobivam uz osnovnu plaću?",
+    a: "Topli obrok u tvornici, regres, božićnicu, naknadu za godišnji odmor, organiziran prijevoz, zaštitnu opremu, plaćene edukacije i certifikate (uključujući viličar). Detalje primanja prolazimo na razgovoru — uvjeti ovise o poziciji i iskustvu."
+  },
+  {
+    q: "Što treba ponijeti prvi dan?",
+    a: "Osobnu, OIB i bankovni račun za isplatu plaće. Zaštitnu opremu (radne cipele, odjeću, kacigu, naočale) dobiješ od nas. Detalje šaljemo e-mailom dan prije početka."
+  },
+  {
+    q: "Mogu li napredovati unutar tvrtke?",
+    a: "Da. Većina naših voditelja smjena i timova krenula je iz nižih pozicija. Aktivno promoviramo unutarnje napredovanje — kad otvorimo novu poziciju, prvo gledamo internu ekipu."
+  },
+  {
+    q: "Što ako se ne nađem u objavljenim pozicijama?",
+    a: "Pošalji opću prijavu kroz formu (odaberi 'Opća prijava'). Bazu kandidata redovito pregledavamo i javljamo se kad otvorimo poziciju koja ti odgovara."
+  }
+];
+
+/* ============================================================
+   RENDERING & INTERAKCIJE
+   ============================================================ */
+
+const LOCATION_LABELS = {
+  tvornica: "Donja Dubrava",
+  ured: "Donji Kraljevec",
+  praona: "Zagreb · praona"
+};
+
+// FILTERI
+function renderFilters() {
+  const counts = { sve: POSITIONS.length, tvornica: 0, ured: 0, praona: 0 };
+  POSITIONS.forEach(p => counts[p.location]++);
+  const filters = [
+    { key: "sve", label: "Sve pozicije" },
+    { key: "tvornica", label: "Tvornica" },
+    { key: "ured", label: "Ured" },
+    { key: "praona", label: "Praona Zagreb" }
+  ];
+  const html = filters.map(f => `
+    <button class="filter ${f.key === 'sve' ? 'active' : ''}" data-filter="${f.key}">
+      ${f.label}<span class="count">${counts[f.key]}</span>
+    </button>
+  `).join("");
+  document.getElementById("pos-filters").innerHTML = html;
+
+  document.querySelectorAll(".filter").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderPositions(btn.dataset.filter);
+    });
+  });
+}
+
+// POZICIJE
+function renderPositions(filter = "sve") {
+  const list = POSITIONS.filter(p => filter === "sve" || p.location === filter);
+  const html = list.map((p, i) => `
+    <div class="pos" data-id="${p.id}">
+      <div class="p-id">${String(i + 1).padStart(2, "0")}</div>
+      <div class="p-title">${p.title}</div>
+      <div class="p-loc">${LOCATION_LABELS[p.location]}</div>
+      <div class="p-type">${p.type}</div>
+      <div class="p-chev">+</div>
+      <div class="pos-body">
+        <div>
+          <h4>Što radiš</h4>
+          <ul>${p.responsibilities.map(r => `<li>${r}</li>`).join("")}</ul>
+        </div>
+        <div>
+          <h4>Što tražimo</h4>
+          <ul>${p.requirements.map(r => `<li>${r}</li>`).join("")}</ul>
+        </div>
+        <div class="apply-row">
+          <p>Zanima te ova pozicija?</p>
+          <a href="#prijava" class="btn" data-apply-id="${p.id}" data-apply-title="${p.title}">Prijavi se →</a>
+        </div>
+      </div>
+    </div>
+  `).join("");
+  document.getElementById("pos-list").innerHTML = html;
+
+  // toggle expand
+  document.querySelectorAll(".pos").forEach(el => {
+    el.addEventListener("click", (e) => {
+      // ignore clicks on apply button — neka radi default link
+      if (e.target.closest("[data-apply-id]")) return;
+      el.classList.toggle("open");
+    });
+  });
+
+  // klik na "Prijavi se" — popuni dropdown
+  document.querySelectorAll("[data-apply-id]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.applyId;
+      const sel = document.getElementById("form-pozicija");
+      if (sel) sel.value = id;
+    });
+  });
+
+  // popuni dropdown forme
+  const sel = document.getElementById("form-pozicija");
+  if (sel) {
+    // ostavi prva 2 optiona ("odaberi", "opca prijava")
+    while (sel.options.length > 2) sel.remove(2);
+    POSITIONS.forEach(p => {
+      const opt = document.createElement("option");
+      opt.value = p.id;
+      opt.textContent = `${p.title} · ${LOCATION_LABELS[p.location]}`;
+      sel.appendChild(opt);
+    });
+  }
+}
+
+// TESTIMONIALI
+function renderQuotes() {
+  document.getElementById("quotes").innerHTML = TESTIMONIALS.map(t => `
+    <div class="quote">
+      <div class="q-mark">"</div>
+      <blockquote>${t.quote}</blockquote>
+      <div class="who">
+        <div class="av">${t.initials}</div>
+        <div class="who-info">
+          <div class="name">${t.name}</div>
+          <div class="role">${t.role}</div>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+// FAQ
+function renderFaq() {
+  document.getElementById("faq-list").innerHTML = FAQS.map(f => `
+    <div class="faq-item">
+      <div class="faq-q">
+        <span>${f.q}</span>
+        <span class="chev">+</span>
+      </div>
+      <div class="faq-a">${f.a}</div>
+    </div>
+  `).join("");
+  document.querySelectorAll(".faq-item").forEach(el => {
+    el.addEventListener("click", () => el.classList.toggle("open"));
+  });
+}
+
+// FILE INPUT label
+function setupFileInput() {
+  const input = document.getElementById("cv-input");
+  const label = document.getElementById("cv-label");
+  if (!input) return;
+  input.addEventListener("change", () => {
+    if (input.files && input.files.length) {
+      label.textContent = "✓ " + input.files[0].name;
+    } else {
+      label.textContent = "+ Dodaj CV";
+    }
+  });
+}
+
+// FORMA — submit s Formspree
+function setupForm() {
+  const form = document.getElementById("apply-form");
+  if (!form) return;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector(".form-submit");
+    const success = form.querySelector(".form-success");
+    const error = form.querySelector(".form-error");
+    success.style.display = "none";
+    error.style.display = "none";
+    btn.disabled = true;
+    btn.textContent = "Šaljem...";
+
+    try {
+      const fd = new FormData(form);
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: fd,
+        headers: { "Accept": "application/json" }
+      });
+      if (res.ok) {
+        success.style.display = "block";
+        form.reset();
+        document.getElementById("cv-label").textContent = "+ Dodaj CV";
+      } else {
+        error.style.display = "block";
+      }
+    } catch {
+      error.style.display = "block";
+    }
+
+    btn.disabled = false;
+    btn.textContent = "Pošalji prijavu →";
+  });
+}
+
+// REVEAL on scroll
+function setupReveal() {
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("in"); });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
+}
+
+// INIT
+renderFilters();
+renderPositions();
+renderQuotes();
+renderFaq();
+setupFileInput();
+setupForm();
+setupReveal();
+</script>
+</body>
+</html>

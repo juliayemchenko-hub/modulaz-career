@@ -1,0 +1,9 @@
+# Claude Code
+.claude/
+
+# Backup / preview files
+index-no-photos.html
+preview-photos.html
+
+# OS
+.DS_Store
