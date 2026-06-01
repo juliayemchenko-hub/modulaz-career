@@ -65,7 +65,7 @@ exports.handler = async (event) => {
 
   const payload = {
     personalizations: [{ to: [{ email: "hr@modulazgroup.com", name: "Modulaz HR" }] }],
-    from: { email: "hr@modulazgroup.com", name: "Modulaz Prijave" },
+    from: { email: "subscriptions@alfawash.hr", name: "Modulaz Prijave" },
     reply_to: { email: email, name: `${ime} ${prezime}` },
     subject: `Prijava: ${pozicija} — ${ime} ${prezime}`,
     content: [{ type: "text/html", value: htmlBody }],
