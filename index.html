@@ -1501,7 +1501,7 @@
         </ul>
       </div>
 
-      <form class="form-card" id="apply-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+      <form class="form-card" id="apply-form" method="POST" action="/.netlify/functions/apply">
         <div class="form-row split">
           <div>
             <label>Ime <span class="req">*</span></label>
@@ -2045,12 +2045,37 @@ function setupForm() {
     btn.textContent = "Šaljem...";
 
     try {
-      const fd = new FormData(form);
+      // Read CV file as base64 if provided
+      const cvInput = form.querySelector('[name="cv"]');
+      let cv_name = null, cv_data = null, cv_type = null;
+      if (cvInput && cvInput.files && cvInput.files[0]) {
+        const file = cvInput.files[0];
+        cv_name = file.name;
+        cv_type = file.type;
+        cv_data = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result.split(",")[1]); // base64 only
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      const payload = {
+        ime: form.querySelector('[name="ime"]').value.trim(),
+        prezime: form.querySelector('[name="prezime"]').value.trim(),
+        telefon: form.querySelector('[name="telefon"]').value.trim(),
+        email: form.querySelector('[name="email"]').value.trim(),
+        pozicija: form.querySelector('[name="pozicija"]').value,
+        poruka: form.querySelector('[name="poruka"]').value.trim(),
+        cv_name, cv_data, cv_type
+      };
+
       const res = await fetch(form.action, {
         method: "POST",
-        body: fd,
-        headers: { "Accept": "application/json" }
+        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" }
       });
+
       if (res.ok) {
         success.style.display = "block";
         form.reset();
