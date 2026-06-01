@@ -4,6 +4,11 @@
 # Backup / preview files
 index-no-photos.html
 preview-photos.html
+preview-hero.html
+
+# Unused backup photos
+photos/sky-office-ured.jpg
+photos/sky-office-prostor.jpg
 
 # OS
 .DS_Store
