@@ -2145,16 +2145,21 @@ function setupDonuts() {
   const fills = [...document.querySelectorAll('.donut .fill')];
   if (fills.length === 0) return;
   const CIRC = 2 * Math.PI * 52; // r = 52
-  const io = new IntersectionObserver((entries, obs) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const pct = parseFloat(e.target.getAttribute('data-pct')) || 0;
-        e.target.style.strokeDashoffset = CIRC * (1 - pct / 100);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  fills.forEach(f => io.observe(f));
+  const fill = () => fills.forEach(f => {
+    const pct = parseFloat(f.getAttribute('data-pct')) || 0;
+    f.style.strokeDashoffset = CIRC * (1 - pct / 100);
+  });
+  // promatraj blok-element (ne SVG <circle>, jer IO na SVG nije pouzdan)
+  const wrap = fills[0].closest('.stats-team-wrap') || fills[0].closest('section');
+  if ('IntersectionObserver' in window && wrap) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { fill(); obs.disconnect(); } });
+    }, { threshold: 0.15 });
+    io.observe(wrap);
+    setTimeout(fill, 2500); // sigurnosni fallback
+  } else {
+    fill();
+  }
 }
 
 // FAQ
