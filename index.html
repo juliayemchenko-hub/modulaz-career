@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Karijere · Modulaz Group</title>
-<meta name="description" content="Otvorene pozicije u Modulazu — tvornica u Donjoj Dubravi, ured u Donjem Kraljevcu, praona u Zagrebu. Proizvodimo za Lidl, Kaufland i Spar. Pridruži nam se." />
+<meta name="description" content="Otvorene pozicije u Modulazu - tvornica u Donjoj Dubravi, ured u Donjem Kraljevcu, praona u Zagrebu. Proizvodimo za Lidl, Kaufland i Spar. Pridruži nam se." />
 <meta property="og:title" content="Karijere · Modulaz Group" />
 <meta property="og:description" content="300.000 litara dnevno iz Donje Dubrave za Lidl, Kaufland i Spar. Tvoj sljedeći posao je 15 minuta od kuće." />
 <meta property="og:type" content="website" />
@@ -71,7 +71,7 @@
   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); position: relative; z-index: 1; }
   section { position: relative; z-index: 1; }
 
-  /* Section header — žuta traka puna širina */
+  /* Section header - žuta traka puna širina */
   .sec-head {
     display: flex; align-items: center; gap: 10px;
     background: #FAFFD6;
@@ -230,7 +230,7 @@
     margin-top: 42px;
     display: flex; gap: 14px; flex-wrap: wrap;
   }
-  /* hero gumbi — mint na tamnoj podlozi */
+  /* hero gumbi - mint na tamnoj podlozi */
   .hero .btn { border-color: var(--mint); background: var(--mint); color: var(--ink); }
   .hero .btn:hover { background: transparent; color: #fff; }
   .hero .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.6); }
@@ -266,7 +266,7 @@
   }
   .btn:hover .arr { transform: translateX(4px); }
 
-  /* HERO VISUAL — molekulske točke */
+  /* HERO VISUAL - molekulske točke */
   .hero-visual {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -343,7 +343,7 @@
   .stat .v {
     font-family: var(--f-display);
     font-size: clamp(48px, 6vw, 84px);
-    line-height: 1;
+    font-weight: 400; line-height: 1;
     letter-spacing: -0.02em;
   }
   .stat .v em { color: var(--mint-deep); }
@@ -381,11 +381,10 @@
   }
 
   /* ----------------------------------------------------------
-     ZAŠTO MODULAZ — 4 stupa
+     ZAŠTO MODULAZ - 4 stupa
      ---------------------------------------------------------- */
   .why {
     padding-bottom: 120px;
-    border-bottom: 1px solid var(--line);
   }
   .why-intro {
     display: grid;
@@ -425,7 +424,7 @@
     display: flex; gap: 12px;
   }
   .pillar ul li::before {
-    content: "—"; color: var(--mint-deep); flex-shrink: 0;
+    content: "-"; color: var(--mint-deep); flex-shrink: 0;
   }
 
   /* ----------------------------------------------------------
@@ -433,7 +432,6 @@
      ---------------------------------------------------------- */
   .locations {
     padding-bottom: 120px;
-    border-bottom: 1px solid var(--line);
   }
   .loc-grid {
     display: grid;
@@ -483,7 +481,7 @@
   /* ----------------------------------------------------------
      POZICIJE
      ---------------------------------------------------------- */
-  .positions { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .positions { padding-bottom: 120px; }
   .pos-filters {
     display: flex; gap: 10px; flex-wrap: wrap;
     margin: 20px 0 36px;
@@ -555,6 +553,13 @@
     transition: transform .25s;
   }
   .pos.open .p-chev { transform: rotate(45deg); color: var(--ink); }
+  .pos .p-badge {
+    display: inline-block; margin-left: 12px;
+    font-family: var(--f-body); font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    background: var(--mint); color: var(--ink);
+    padding: 3px 9px; vertical-align: middle;
+  }
 
   .pos-body {
     display: none;
@@ -586,7 +591,11 @@
     border-top: 1px dashed var(--line);
   }
   .pos-body ul li:first-child { border-top: none; }
-  .pos-body ul li::before { content: "—"; color: var(--mint-deep); flex-shrink: 0; }
+  .pos-body ul li::before { content: "-"; color: var(--mint-deep); flex-shrink: 0; }
+  .pos-body .pos-offer { grid-column: 1 / -1; margin-top: 4px; }
+  .pos-body .open-msg { grid-column: 1 / -1; }
+  .pos-body .open-msg p { font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 64ch; }
+  .pos.pos-open .p-title { color: var(--mint-deep); }
   .pos-body .apply-row {
     grid-column: 1 / -1;
     display: flex; gap: 14px; align-items: center;
@@ -604,7 +613,7 @@
   /* ----------------------------------------------------------
      ŽIVOT
      ---------------------------------------------------------- */
-  .life { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .life { padding-bottom: 120px; }
   .life-intro {
     display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px;
     align-items: end; margin-bottom: 64px;
@@ -656,7 +665,7 @@
     color: var(--ink-3); margin-top: 2px;
   }
 
-  /* ATOMS WE ARE MADE OF — pločice u stilu periodnog sustava */
+  /* ATOMS WE ARE MADE OF - pločice u stilu periodnog sustava */
   .life-intro h2 em { color: var(--mint-deep); }
   .atoms-grid {
     display: grid;
@@ -667,26 +676,38 @@
   @media (max-width: 540px) { .atoms-grid { grid-template-columns: 1fr; } }
   .atom {
     border: 1px solid var(--line);
-    padding: 30px 28px 34px;
+    padding: 28px 26px 32px;
     background: var(--bg);
-    display: flex; flex-direction: column; gap: 14px;
+    display: flex; flex-direction: column; gap: 20px;
     transition: background .2s, border-color .2s;
   }
   .atom:hover { background: var(--mint-soft); border-color: var(--mint-deep); }
-  .atom .sym {
-    font-family: var(--f-display);
-    font-size: 42px; font-weight: 700; line-height: 1;
-    color: var(--mint-deep); letter-spacing: -0.02em;
-    display: flex; align-items: baseline; gap: 8px;
-    margin-bottom: 6px;
+  /* Periodni element */
+  .el-tile {
+    position: relative;
+    width: 96px; height: 96px;
+    border: 2px solid var(--ink);
+    background: var(--mint);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
-  .atom .sym .no {
-    font-family: var(--f-body); font-size: 13px; font-weight: 300;
-    letter-spacing: 0; color: var(--ink); opacity: 0.4;
+  .el-tile .el-num {
+    position: absolute; top: 6px; left: 8px;
+    font-family: var(--f-mono); font-size: 11px; color: var(--ink); line-height: 1;
   }
-  .atom h3 {
-    font-family: var(--f-display); font-size: 20px; font-weight: 700;
-    letter-spacing: -0.01em;
+  .el-tile .el-mass {
+    position: absolute; bottom: 6px; right: 8px;
+    font-family: var(--f-mono); font-size: 8px; color: var(--ink); opacity: 0.5; line-height: 1;
+  }
+  .el-tile .el-sym {
+    font-family: var(--f-display); font-size: 42px; font-weight: 700;
+    line-height: 1; color: var(--ink); letter-spacing: -0.02em;
+  }
+  .el-tile .el-nm {
+    font-family: var(--f-mono); font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--ink); margin-top: 5px; line-height: 1.1;
+    text-align: center; padding: 0 4px;
   }
   .atom p {
     font-size: 14.5px; line-height: 1.55; color: var(--ink); font-weight: 300;
@@ -731,7 +752,7 @@
   /* ----------------------------------------------------------
      FORMA
      ---------------------------------------------------------- */
-  .apply { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .apply { padding-bottom: 120px; }
   .apply-grid {
     display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(40px, 6vw, 96px);
     align-items: start;
@@ -837,7 +858,37 @@
   .form-success { background: var(--mint-soft); color: var(--mint-deep); border: 1px solid var(--mint); }
   .form-error { background: #fff0f0; color: #a32a2a; border: 1px solid #ffcccc; }
 
-  /* Referral banner — отдельный CTA */
+  /* ----------------------------------------------------------
+     REFERRAL MODAL
+     ---------------------------------------------------------- */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.6);
+    -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay[hidden] { display: none; }
+  .modal {
+    background: var(--bg);
+    border: 3px solid var(--ink);
+    max-width: 560px; width: 100%;
+    padding: clamp(28px, 4vw, 44px);
+    position: relative;
+    max-height: 92vh; overflow-y: auto;
+  }
+  .modal h3 { font-size: clamp(24px, 3vw, 34px); line-height: 1.1; }
+  .modal h3 em { color: var(--mint-deep); }
+  .modal-sub { font-size: 14.5px; color: var(--ink-2); margin: 8px 0 26px; line-height: 1.5; }
+  .modal-close {
+    position: absolute; top: 14px; right: 18px;
+    background: none; border: none; font-size: 30px; line-height: 1;
+    cursor: pointer; color: var(--ink); font-family: var(--f-display);
+    padding: 0;
+  }
+  .modal-close:hover { color: var(--mint-deep); }
+
+  /* Referral banner - отдельный CTA */
   .referral {
     margin-top: 80px;
     border: 3px solid var(--ink);
@@ -855,7 +906,7 @@
   /* ----------------------------------------------------------
      FAQ
      ---------------------------------------------------------- */
-  .faq { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .faq { padding-bottom: 120px; }
   .faq-intro { max-width: 640px; margin-bottom: 48px; }
   .faq-list { border-top: 1px solid var(--line); }
   .faq-item {
@@ -931,7 +982,7 @@
   /* ----------------------------------------------------------
      ODGOVORNOST / ODRŽIVOST
      ---------------------------------------------------------- */
-  .sustain { padding-bottom: 120px; border-bottom: 1px solid var(--line); }
+  .sustain { padding-bottom: 120px; }
 
   .sustain-cols {
     display: grid;
@@ -955,7 +1006,7 @@
   .sustain-col p { font-size: 15px; color: var(--ink-2); line-height: 1.65; }
 
   /* ----------------------------------------------------------
-     ODJELI — elegantni čipovi
+     ODJELI - elegantni čipovi
      ---------------------------------------------------------- */
   .dept-chips {
     display: flex; flex-wrap: wrap; gap: 10px;
@@ -975,9 +1026,7 @@
      EXPORT BLOCK + PARTNER LOGOS
      ---------------------------------------------------------- */
   .export-block {
-    margin: 56px 0 0;
-    border-top: 1px solid var(--line);
-    padding-top: 48px;
+    margin: 8px 0 0;
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: clamp(40px, 6vw, 96px);
@@ -998,15 +1047,16 @@
   }
   .export-stat .ev {
     font-family: var(--f-display);
-    font-size: clamp(44px, 5vw, 68px);
-    font-weight: 700; line-height: 1;
+    font-size: clamp(48px, 6vw, 84px);
+    font-weight: 400; line-height: 1;
     letter-spacing: -0.02em;
   }
   .export-stat .ev em { color: var(--mint-deep); font-style: normal; }
   .export-stat .el {
-    margin-top: 8px;
-    font-family: var(--f-body); font-size: 11px; font-weight: 300;
+    margin-top: 14px;
+    font-family: var(--f-mono); font-size: 11.5px; font-weight: 400;
     text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-2);
   }
 
   .partners-row {
@@ -1027,21 +1077,19 @@
   }
 
   /* ----------------------------------------------------------
-     TIM STATS — odvojeni blok
+     TIM STATS - odvojeni blok
      ---------------------------------------------------------- */
   .stats-team-wrap {
-    margin-top: 56px;
-    border-top: 1px solid var(--line);
-    padding-top: 16px;
+    margin-top: 76px;
   }
   .stats-team-label {
     font-family: var(--f-body); font-size: 11.5px; font-weight: 300;
     text-transform: uppercase; letter-spacing: 0.18em;
-    color: var(--ink); margin-bottom: 0;
+    color: var(--ink); margin-bottom: 30px;
   }
 
   /* ----------------------------------------------------------
-     TEAM STATS (odmah ispod hero) — s donut grafovima
+     TEAM STATS (odmah ispod hero) - s donut grafovima
      ---------------------------------------------------------- */
   .team-stats {
     padding: 72px 0 80px;
@@ -1091,14 +1139,14 @@
      DEPARTMENTS MINI-HEADING
      ---------------------------------------------------------- */
   .depts-block {
-    padding: 40px 0 48px;
-    border-top: 1px solid var(--line);
+    padding: 8px 0 8px;
   }
-  .depts-mini-head {
+  .depts-mini-head, .atoms-mini-head {
     font-family: var(--f-body); font-size: 11.5px; font-weight: 300;
     text-transform: uppercase; letter-spacing: 0.18em;
     color: var(--ink); margin-bottom: 16px;
   }
+  .atoms-mini-head { margin-top: 44px; }
 
   /* ----------------------------------------------------------
      PHOTO GALLERY
@@ -1188,7 +1236,7 @@
   }
 
   /* ----------------------------------------------------------
-     Europa Light — zamjena za JetBrains Mono
+     Europa Light - zamjena za JetBrains Mono
      ---------------------------------------------------------- */
   .nav-links, .nav-links a, .nav-links .lang,
   .hero-tag,
@@ -1232,7 +1280,7 @@
     <div class="hero-content">
       <div class="hero-tag">Karijere · Modulaz Group</div>
       <h1>Karijera u <span class="accent">Modulaz Group</span></h1>
-      <p class="hero-sub">Jedan od vodećih proizvođača auto kozmetike i tehničkih aerosola u regiji. Od 2002.</p>
+      <p class="hero-sub">Izgradi karijeru i promijeni svoje sutra. U Modulazu cijenimo svoje ljude.</p>
       <div class="hero-cta">
         <a href="#pozicije" class="btn">Otvorene pozicije <span class="arr">→</span></a>
         <a href="#zasto" class="btn btn-ghost">Zašto Modulaz</a>
@@ -1242,17 +1290,24 @@
   <div class="hero-dots" id="hero-dots"></div>
 </section>
 
-<!-- ==================== ZAŠTO MODULAZ ==================== -->
-<section class="why" id="zasto">
+<!-- ==================== OUR VALUES (Život) ==================== -->
+<section class="life" id="zivot">
   <div class="wrap">
     <div class="sec-head">
       <span class="num">01</span>
-      <span class="name">Zašto Modulaz</span>
+      <span class="name">Our values</span>
+    </div>
+
+    <div class="life-intro">
+      <h2>Atoms we are <em>made of</em>.</h2>
+      <p class="lead">
+        Kemija je naš posao - ali ono od čega smo zaista sastavljeni nije samo na deklaraciji proizvoda. Ovo su odjeli koji nas čine i vrijednosti koje nas drže na okupu.
+      </p>
     </div>
 
     <!-- Naši odjeli -->
     <div class="depts-block">
-      <div class="depts-mini-head">Naši odjeli</div>
+      <div class="depts-mini-head">Sastavljeni smo od ovih odjela</div>
       <div class="dept-chips">
         <span class="dept-chip">Logistika</span>
         <span class="dept-chip">R&amp;D</span>
@@ -1270,99 +1325,43 @@
       </div>
     </div>
 
-    <div class="why-intro">
-      <h2>Stabilna tvrtka. <em>Konkretni</em> uvjeti. Bez bajki.</h2>
-      <p class="lead">
-        Nećemo ti pričati o "mladom timu" i "dinamičnom okruženju". Reći ćemo ti što stvarno dobivaš — od prvog dana, na papiru i u praksi.
-      </p>
-    </div>
-
-    <div class="why-grid">
-      <div class="pillar">
-        <div class="p-num">01</div>
-        <h3>Financijska <em>sigurnost</em> koja traje</h3>
-        <p>Stabilna i konkurentna plaća u tvrtki koja raste već 22 godine — uz dodatne benefite i nagrade koje prate tvoj trud i rezultate.</p>
-        <ul>
-          <li>Konkurentna plaća i financijske nagrade prema rezultatima</li>
-          <li>Božićnica i uskrsnica</li>
-          <li>Regres i naknada za godišnji odmor</li>
-          <li>Ugovor na neodređeno nakon probnog rada</li>
-        </ul>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">02</div>
-        <h3>Dolazak na posao <em>bez komplikacija</em></h3>
-        <p>Organiziramo prijevoz i pokrivamo troškove — jer put do posla ne bi trebao biti tvoja glavobolja.</p>
-        <ul>
-          <li>Organizirani eko-električni shuttlevi do tvornice u Donjoj Dubravi</li>
-          <li>Korporativna vozila za određene pozicije</li>
-          <li>Refundacija troškova prijevoza</li>
-        </ul>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">03</div>
-        <h3><em>Razvoj</em> koji ima smisla</h3>
-        <p>Mogućnost napredovanja i karijernog rasta unutar tvrtke — za one koji žele više od trenutne pozicije.</p>
-        <ul>
-          <li>Transparentan sustav napredovanja i dodatnih primanja</li>
-          <li>Sudjelovanje na međunarodnim konferencijama</li>
-          <li>Poslovna putovanja</li>
-          <li>Prelazak između timova i ureda prema interesu i razvoju</li>
-          <li>Mogućnost rada u zagrebačkom uredu za određene uredske pozicije iz međimurskog ureda</li>
-        </ul>
-      </div>
-
-      <div class="pillar">
-        <div class="p-num">04</div>
-        <h3>Okruženje u kojem se <em>dobro radi</em></h3>
-        <p>Brinemo o svakodnevnim detaljima koji čine radni dan ugodnijim — od obroka do zajedničkih aktivnosti.</p>
-        <ul>
-          <li>Topli obrok za zaposlenike u Donjoj Dubravi</li>
-          <li>Moderni aparati za kavu, napici i grickalice</li>
-          <li>Team buildingovi i zajednička druženja</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== OUR VALUES (Život) ==================== -->
-<section class="life" id="zivot">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="num">02</span>
-      <span class="name">Our values</span>
-    </div>
-
-    <div class="life-intro">
-      <h2>Atoms we are <em>made of</em>.</h2>
-      <p class="lead">
-        Kemija je naš posao — ali ono od čega smo zaista sastavljeni nije samo na deklaraciji proizvoda. Ovo su četiri atoma koji drže Modulaz na okupu, svaki dan i na svakoj lokaciji.
-      </p>
-    </div>
-
+    <div class="atoms-mini-head">Vrijednosti koje nas drže na okupu</div>
     <div class="atoms-grid">
       <div class="atom">
-        <div class="sym">Lj <span class="no">01</span></div>
-        <h3>Ljudi</h3>
-        <p>Tehnologija puni linije, ali pogon vode ljudi. Ulažemo u ekipu — educiramo, certificiramo i slušamo, jer bez dobrih ljudi nema dobrog proizvoda.</p>
+        <div class="el-tile">
+          <span class="el-num">01</span>
+          <span class="el-sym">Lj</span>
+          <span class="el-nm">Ljudi</span>
+          <span class="el-mass">6.9</span>
+        </div>
+        <p>Tehnologija puni linije, ali pogon vode ljudi. Ulažemo u ekipu - educiramo, certificiramo i slušamo, jer bez dobrih ljudi nema dobrog proizvoda.</p>
       </div>
       <div class="atom">
-        <div class="sym">St <span class="no">02</span></div>
-        <h3>Stabilnost</h3>
-        <p>22 godine na tržištu, redovita plaća i posao koji ne ovisi o sezoni. Kod nas znaš na čemu si — i ovaj mjesec i za pet godina.</p>
+        <div class="el-tile">
+          <span class="el-num">02</span>
+          <span class="el-sym">St</span>
+          <span class="el-nm">Stabilnost</span>
+          <span class="el-mass">32</span>
+        </div>
+        <p>22 godine na tržištu, redovita plaća i posao koji ne ovisi o sezoni. Kod nas znaš na čemu si - i ovaj mjesec i za pet godina.</p>
       </div>
       <div class="atom">
-        <div class="sym">Ra <span class="no">03</span></div>
-        <h3>Rast</h3>
+        <div class="el-tile">
+          <span class="el-num">03</span>
+          <span class="el-sym">Ra</span>
+          <span class="el-nm">Rast</span>
+          <span class="el-mass">88</span>
+        </div>
         <p>Većina naših voditelja krenula je s linije ili iz skladišta. Kad se otvori nova pozicija, prvo gledamo svoju ekipu.</p>
       </div>
       <div class="atom">
-        <div class="sym">Do <span class="no">04</span></div>
-        <h3>Dom</h3>
-        <p>Posao blizu kuće, organiziran prijevoz iz cijelog Međimurja i topli obrok. Život ne počinje tek nakon smjene.</p>
+        <div class="el-tile">
+          <span class="el-num">04</span>
+          <span class="el-sym">In</span>
+          <span class="el-nm">Inovacija</span>
+          <span class="el-mass">115</span>
+        </div>
+        <p>Automatizirane linije, vlastiti R&amp;D laboratorij i oprema kojom rade najveći europski proizvođači. Stojimo mirno samo kad tražimo bolji način.</p>
       </div>
     </div>
 
@@ -1427,7 +1426,7 @@
 <section class="locations" id="lokacije">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num">03</span>
+      <span class="num">02</span>
       <span class="name">Gdje radimo</span>
     </div>
 
@@ -1457,7 +1456,7 @@
 
       <div class="loc loc-has-photo">
         <div class="loc-photo">
-          <img src="photos/sky-office-zgrada.jpg" alt="Sky Office, Zagreb — zgrada" loading="lazy">
+          <img src="photos/sky-office-zgrada.jpg" alt="Sky Office, Zagreb - zgrada" loading="lazy">
         </div>
         <div class="loc-body">
           <span class="loc-tag">Ured</span>
@@ -1479,7 +1478,7 @@
           <span class="loc-tag">Praona</span>
           <h3>Zagreb, Remetinec</h3>
           <div class="addr">Remetinečka cesta 100a</div>
-          <p>Manja jedinica u Zagrebu — trenutno traži ljude za rad na automatskoj praoni. Ne treba prethodno iskustvo.</p>
+          <p>Manja jedinica u Zagrebu - trenutno traži ljude za rad na automatskoj praoni. Ne treba prethodno iskustvo.</p>
           <div class="loc-meta">
             <span><b>Radno vrijeme:</b> 2 smjene</span>
           </div>
@@ -1493,14 +1492,14 @@
 <section class="positions" id="pozicije">
   <div class="wrap">
     <div class="sec-head">
-      <span class="num">04</span>
+      <span class="num">03</span>
       <span class="name">Otvorene pozicije</span>
     </div>
 
     <div class="why-intro" style="margin-bottom: 24px;">
       <h2>Tko nam <em>treba</em>.</h2>
       <p class="lead">
-        Posloženo po lokacijama. Klikni poziciju za detalje i prijavu. Ako ne nalaziš sebe — javi se svejedno, uvijek tražimo dobre ljude.
+        Posloženo po lokacijama. Klikni poziciju za detalje i prijavu. Ako ne nalaziš sebe - javi se svejedno, uvijek tražimo dobre ljude.
       </p>
     </div>
 
@@ -1516,9 +1515,75 @@
     <div class="referral">
       <div>
         <h3>Poznaješ nekoga tko bi nam pristajao?</h3>
-        <p>Preporuči ga. Ako se zaposli i ostane 3 mjeseca — dobiješ nagradu. Najjednostavnije zarađene novce u Modulazu.</p>
+        <p>Preporuči ga. Ako se zaposli i ostane 3 mjeseca - dobiješ nagradu. Najjednostavnije zarađene novce u Modulazu.</p>
       </div>
-      <a href="mailto:karijere@modulazgroup.com?subject=Preporuka%20kandidata" class="btn btn-ghost">Pošalji preporuku</a>
+      <button type="button" class="btn btn-ghost" id="referral-open">Pošalji preporuku</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ZAŠTO MODULAZ (benefiti) ==================== -->
+<section class="why" id="zasto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">04</span>
+      <span class="name">Zašto Modulaz</span>
+    </div>
+
+    <div class="why-intro">
+      <h2>Stabilna tvrtka. <em>Konkretni</em> uvjeti. Bez bajki.</h2>
+      <p class="lead">
+        Nećemo ti pričati o "mladom timu" i "dinamičnom okruženju". Reći ćemo ti što stvarno dobivaš - od prvog dana, na papiru i u praksi.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="pillar">
+        <div class="p-num">01</div>
+        <h3>Financijska <em>sigurnost</em> koja traje</h3>
+        <p>Stabilna i konkurentna plaća u tvrtki koja raste već 22 godine - uz dodatne benefite i nagrade koje prate tvoj trud i rezultate.</p>
+        <ul>
+          <li>Konkurentna plaća i financijske nagrade prema rezultatima</li>
+          <li>Božićnica i uskrsnica</li>
+          <li>Regres i naknada za godišnji odmor</li>
+          <li>Ugovor na neodređeno nakon probnog rada</li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="p-num">02</div>
+        <h3>Dolazak na posao <em>bez komplikacija</em></h3>
+        <p>Organiziramo prijevoz i pokrivamo troškove - jer put do posla ne bi trebao biti tvoja glavobolja.</p>
+        <ul>
+          <li>Organizirani eko-električni shuttlevi do tvornice u Donjoj Dubravi</li>
+          <li>Korporativna vozila za određene pozicije</li>
+          <li>Refundacija troškova prijevoza</li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="p-num">03</div>
+        <h3><em>Razvoj</em> koji ima smisla</h3>
+        <p>Mogućnost napredovanja i karijernog rasta unutar tvrtke - za one koji žele više od trenutne pozicije.</p>
+        <ul>
+          <li>Transparentan sustav napredovanja i dodatnih primanja</li>
+          <li>Sudjelovanje na međunarodnim konferencijama</li>
+          <li>Poslovna putovanja</li>
+          <li>Prelazak između timova i ureda prema interesu i razvoju</li>
+          <li>Mogućnost rada u zagrebačkom uredu za određene uredske pozicije iz međimurskog ureda</li>
+        </ul>
+      </div>
+
+      <div class="pillar">
+        <div class="p-num">04</div>
+        <h3>Okruženje u kojem se <em>dobro radi</em></h3>
+        <p>Brinemo o svakodnevnim detaljima koji čine radni dan ugodnijim - od obroka do zajedničkih aktivnosti.</p>
+        <ul>
+          <li>Topli obrok za zaposlenike u Donjoj Dubravi</li>
+          <li>Moderni aparati za kavu, napici i grickalice</li>
+          <li>Team buildingovi i zajednička druženja</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1533,7 +1598,7 @@
 
     <div class="why-intro" style="margin-bottom: 52px;">
       <h2>Poslujemo <em>odgovorno</em>.</h2>
-      <p class="lead">Briga o okolišu nije marketinška priča — ugrađena je u to kako svaki dan radimo, od energije do ambalaže.</p>
+      <p class="lead">Briga o okolišu nije marketinška priča - ugrađena je u to kako svaki dan radimo, od energije do ambalaže.</p>
     </div>
 
     <div class="sustain-cols">
@@ -1549,13 +1614,13 @@
 
       <div class="sustain-col">
         <h3>Električni transport</h3>
-        <p>Koristimo električne shuttle autobuse za prijevoz zaposlenika, a većina naše korporativne flote je električna — za čišću mobilnost svakog dana.</p>
+        <p>Koristimo električne shuttle autobuse za prijevoz zaposlenika, a većina naše korporativne flote je električna - za čišću mobilnost svakog dana.</p>
       </div>
     </div>
 
-    <!-- Foto tvornice iz zraka — solarni paneli -->
+    <!-- Foto tvornice iz zraka - solarni paneli -->
     <div class="sustain-photo">
-      <img src="photos/tvornica-iz-zraka-solari.jpg" alt="Tvornica Modulaz iz zraka — solarni paneli na krovu" loading="lazy">
+      <img src="photos/tvornica-iz-zraka-solari.jpg" alt="Tvornica Modulaz iz zraka - solarni paneli na krovu" loading="lazy">
       <div class="sustain-photo-label">
         <div>
           <div class="sp-title">100 kW solarnih panela na krovu tvornice</div>
@@ -1581,10 +1646,10 @@
         <p class="lead">Forma traje 2 minute. Ne tražimo motivacijska pisma od 3 stranice. Tražimo CV i broj telefona.</p>
 
         <ul class="checklist">
-          <li>Popuni formu — ime, telefon, e-mail, pozicija</li>
+          <li>Popuni formu - ime, telefon, e-mail, pozicija</li>
           <li>Dodaj CV (PDF, Word ili slikan papirnati)</li>
           <li>Zovemo te unutar 5 radnih dana</li>
-          <li>Razgovor u tvornici ili online — kako tebi paše</li>
+          <li>Razgovor u tvornici ili online - kako tebi paše</li>
         </ul>
       </div>
 
@@ -1612,7 +1677,7 @@
         <div class="form-row">
           <label>Pozicija za koju se prijavljuješ <span class="req">*</span></label>
           <select name="pozicija" id="form-pozicija" required>
-            <option value="">— odaberi poziciju —</option>
+            <option value="">- odaberi poziciju -</option>
             <option value="opcenito">Opća prijava (bilo koja pozicija)</option>
           </select>
         </div>
@@ -1626,7 +1691,7 @@
         </div>
         <div class="form-row">
           <label>Poruka <span style="color:var(--ink-3); text-transform: none; letter-spacing: 0; font-weight: 400;">(opcionalno)</span></label>
-          <textarea name="poruka" placeholder="Ako želiš, napiši nam nešto o sebi — što tražiš, kad možeš početi, što te zanima."></textarea>
+          <textarea name="poruka" placeholder="Ako želiš, napiši nam nešto o sebi - što tražiš, kad možeš početi, što te zanima."></textarea>
         </div>
 
         <div class="form-consent">
@@ -1664,8 +1729,35 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="num">08</span>
-      <span class="name">Brojke</span>
+      <span class="name">O nama</span>
     </div>
+
+    <!-- Export claim + brojke izvoza -->
+    <div class="export-block">
+      <div class="export-claim">
+        Naši proizvodi izvoze se<br>u više od <em>35 zemalja</em><br>diljem Europe i svijeta.
+      </div>
+      <div class="export-nums">
+        <div class="export-stat">
+          <div class="ev">92<em>%</em></div>
+          <div class="el">Export</div>
+        </div>
+        <div class="export-stat">
+          <div class="ev">8<em>%</em></div>
+          <div class="el">Domaće tržište</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner logotipi -->
+    <div class="partners-row" id="partners-row">
+      <div class="partner-logo">Lidl</div>
+      <div class="partner-logo">Kaufland</div>
+      <div class="partner-logo">Spar</div>
+      <div class="partner-logo">INA</div>
+      <div class="partner-logo">Alfacare</div>
+    </div>
+
     <!-- Poslovne brojke -->
     <div class="stats-grid">
       <div class="stat">
@@ -1686,41 +1778,52 @@
       </div>
     </div>
 
-    <!-- Marquee -->
+    <!-- Marquee - kategorije proizvoda -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Lidl</span><span>Kaufland</span><span>Spar</span><span>INA</span><span>Tehnički aerosoli</span><span>Auto kozmetika</span><span>Sredstva za čišćenje</span><span>Dezinficijensi</span><span>Tekućine za vozila</span>
-        <span>Lidl</span><span>Kaufland</span><span>Spar</span><span>INA</span><span>Tehnički aerosoli</span><span>Auto kozmetika</span><span>Sredstva za čišćenje</span><span>Dezinficijensi</span><span>Tekućine za vozila</span>
+        <span>Tehnički aerosoli</span><span>Auto kozmetika</span><span>Sredstva za čišćenje</span><span>Dezinficijensi</span><span>Tekućine za vozila</span>
+        <span>Tehnički aerosoli</span><span>Auto kozmetika</span><span>Sredstva za čišćenje</span><span>Dezinficijensi</span><span>Tekućine za vozila</span>
       </div>
-    </div>
-
-    <!-- Export + partneri -->
-    <div class="export-block">
-      <div class="export-claim">
-        Naši proizvodi izvoze se<br>u više od <em>35 zemalja</em><br>diljem Europe i svijeta.
-      </div>
-      <div class="export-nums">
-        <div class="export-stat">
-          <div class="ev">92<em>%</em></div>
-          <div class="el">Export</div>
-        </div>
-        <div class="export-stat">
-          <div class="ev">8<em>%</em></div>
-          <div class="el">Domaće tržište</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Partner logotipi -->
-    <div class="partners-row">
-      <div class="partner-logo">LIDL</div>
-      <div class="partner-logo">KAUFLAND</div>
-      <div class="partner-logo">SPAR</div>
-      <div class="partner-logo">INA</div>
     </div>
 
   </div>
 </section>
+
+<!-- ==================== REFERRAL MODAL ==================== -->
+<div class="modal-overlay" id="referral-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="referral-title">
+    <button class="modal-close" id="referral-close" type="button" aria-label="Zatvori">×</button>
+    <h3 id="referral-title">Preporuči <em>kandidata</em></h3>
+    <p class="modal-sub">Ako se osoba zaposli i ostane 3 mjeseca - dobiješ nagradu. Ispuni par podataka i mi preuzimamo dalje.</p>
+    <form class="referral-form" id="referral-form" method="POST" action="/.netlify/functions/referral">
+      <div class="form-row">
+        <label>Koga preporučuješ? <span class="req">*</span></label>
+        <input type="text" name="kandidat_ime" required placeholder="Ime i prezime kandidata" />
+      </div>
+      <div class="form-row">
+        <label>Kontakt kandidata <span class="req">*</span></label>
+        <input type="text" name="kandidat_kontakt" required placeholder="E-mail ili telefon" />
+      </div>
+      <div class="form-row split">
+        <div>
+          <label>Tvoje ime i prezime <span class="req">*</span></label>
+          <input type="text" name="tvoje_ime" required />
+        </div>
+        <div>
+          <label>Tvoj kontakt <span class="req">*</span></label>
+          <input type="text" name="tvoj_kontakt" required placeholder="E-mail ili telefon" />
+        </div>
+      </div>
+      <div class="form-row">
+        <label>Zašto bi nam pristajao/la? <span style="color:var(--ink-3); text-transform: none; letter-spacing: 0; font-weight: 400;">(opcionalno)</span></label>
+        <textarea name="poruka" placeholder="Npr. čime se bavi, gdje radi sada, zašto misliš da bi bio dobar za nas."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Pošalji preporuku →</button>
+      <div class="form-success" style="display:none;">Hvala! Preporuka je poslana - javit ćemo se. 🎉</div>
+      <div class="form-error" style="display:none;">Nešto je pošlo po zlu. Pokušaj ponovno ili nam piši na hr@modulazgroup.com.</div>
+    </form>
+  </div>
+</div>
 
 <!-- ==================== FOOTER ==================== -->
 <footer>
@@ -1728,7 +1831,7 @@
     <div class="f-grid">
       <div class="f-brand">
         <div class="brand-name">Modulaz <span>karijere</span></div>
-        <p>Modulaz Group d.o.o. — proizvođač tehničkih aerosola, auto kozmetike, sredstava za čišćenje i dezinficijensa. Od 2002.</p>
+        <p>Modulaz Group d.o.o. - proizvođač tehničkih aerosola, auto kozmetike, sredstava za čišćenje i dezinficijensa. Od 2002.</p>
       </div>
       <div>
         <h5>Lokacije</h5>
@@ -1768,223 +1871,208 @@
 <script>
 /* ============================================================
    SVE ŠTO MIJENJAŠ KAD SE OTVORI NOVA POZICIJA ILI SE PROMIJENI
-   SADRŽAJ — JE TU. NE TREBA NIŠTA DRUGO DIRATI.
+   SADRŽAJ - JE TU. NE TREBA NIŠTA DRUGO DIRATI.
    ============================================================ */
 
 const POSITIONS = [
   {
-    id: "operater-linije",
-    title: "Operater na proizvodnoj liniji",
-    location: "tvornica",         // "tvornica" | "ured" | "praona"
-    type: "Puno radno vrijeme · 3 smjene",
-    summary: "Vođenje proizvodne linije — kontrola doziranja, pakiranja i kvalitete šarže.",
-    responsibilities: [
-      "Rad na automatiziranoj proizvodnoj liniji",
-      "Kontrola doziranja, pakiranja i etiketiranja",
-      "Vođenje proizvodne dokumentacije",
-      "Suradnja s voditeljem smjene i kontrolom kvalitete"
-    ],
-    requirements: [
-      "SSS strojarske, kemijske ili srodne struke (prednost, nije uvjet)",
-      "Spremnost na rad u smjenama",
-      "Odgovornost, preciznost, sposobnost timskog rada",
-      "Bez iskustva — uvodimo te u posao"
-    ]
-  },
-  {
-    id: "voditelj-smjene",
-    title: "Voditelj smjene",
-    location: "tvornica",
-    type: "Puno radno vrijeme · 3 smjene",
-    summary: "Vođenje proizvodne smjene — koordinacija ekipe, plana proizvodnje i kvalitete.",
-    responsibilities: [
-      "Koordinacija rada operatera na 1-2 linije",
-      "Praćenje plana proizvodnje i izvještavanje",
-      "Komunikacija s kontrolom kvalitete i tehnologijom",
-      "Briga o sigurnosti i radnim standardima"
-    ],
-    requirements: [
-      "Iskustvo u proizvodnji (poželjno kao operater ili voditelj)",
-      "Sposobnost vođenja tima 5-10 ljudi",
-      "SSS / VŠS",
-      "Osnove rada na računalu"
-    ]
-  },
-  {
-    id: "tehnolog",
-    title: "Tehnolog proizvodnje",
+    id: "administrator-narudzbi",
+    title: "Administrator narudžbi kupaca i logistike (m/ž)",
     location: "tvornica",
     type: "Puno radno vrijeme · 1 smjena",
-    summary: "Razvoj i optimizacija proizvodnih receptura, podrška proizvodnji.",
+    isNew: true,
+    summary: "Zaprimanje i obrada narudžbi kupaca, koordinacija rokova isporuke i logistike - od narudžbe do dostave.",
     responsibilities: [
-      "Razvoj novih i optimizacija postojećih receptura",
-      "Rad s laboratorijem i kontrolom kvalitete",
-      "Tehnička dokumentacija i SOP-ovi",
-      "Podrška proizvodnji kod uvođenja novih proizvoda"
+      "Zaprimanje i obrada narudžbi kupaca",
+      "Unos i praćenje narudžbi u ERP sustavu",
+      "Koordinacija rokova isporuke s proizvodnjom",
+      "Komunikacija s kupcima vezano uz status narudžbi i rokove isporuke",
+      "Izrada i slanje potvrda narudžbi",
+      "Organizacija transporta i isporuke robe",
+      "Komunikacija s prijevoznicima i logističkim partnerima",
+      "Praćenje realizacije narudžbi od zaprimanja do isporuke",
+      "Suradnja sa skladištem, proizvodnjom, nabavom i financijama",
+      "Vođenje evidencija i osnovne administracije vezane uz narudžbe kupaca"
     ],
     requirements: [
-      "VSS kemija, kemijsko inženjerstvo ili srodno",
-      "Iskustvo u proizvodnoj industriji (prednost)",
-      "Engleski jezik — aktivno",
-      "Analitičko razmišljanje, sistematičnost"
+      "SSS ili VŠS (prednost: ekonomski, logistički ili srodni smjer)",
+      "Iskustvo u administraciji prodaje, logistici ili korisničkoj podršci (prednost, nije uvjet)",
+      "Dobro poznavanje rada u Excelu",
+      "Spremnost na rad u ERP sustavu",
+      "Aktivno korištenje engleskog jezika u pisanoj komunikaciji",
+      "Točnost, organiziranost i odgovornost",
+      "Komunikativnost i pouzdanost",
+      "Sposobnost koordinacije više aktivnosti istovremeno"
+    ],
+    offer: [
+      "Jasno definirane radne zadatke i procese",
+      "Strukturirano uvođenje u posao",
+      "Stabilno radno okruženje",
+      "Stalni radni odnos",
+      "Mogućnost profesionalnog razvoja",
+      "Sufinancirani obrok i prijevoz",
+      "Božićnicu, uskrsnicu i nagrade za lojalnost",
+      "Ugodnu i korektnu radnu atmosferu"
     ]
   },
   {
-    id: "skladistar",
-    title: "Skladištar",
-    location: "tvornica",
-    type: "Puno radno vrijeme · 1-2 smjene",
-    summary: "Prijem, izdavanje i evidencija robe u skladištu sirovina i gotovih proizvoda.",
-    responsibilities: [
-      "Prijem ulazne robe i kontrola dokumentacije",
-      "Pakiranje i priprema isporuka",
-      "Rad u WMS sustavu",
-      "Inventura i redovni popis"
-    ],
-    requirements: [
-      "SSS, iskustvo u skladištu prednost",
-      "Dozvola za viličar (može i nakon zapošljavanja — plaćamo edukaciju)",
-      "Računalna pismenost (osnove)",
-      "Spremnost na fizički posao"
-    ]
-  },
-  {
-    id: "vozac-vilicar",
-    title: "Vozač viličara",
-    location: "tvornica",
-    type: "Puno radno vrijeme · 1-2 smjene",
-    summary: "Pretovar paleta unutar tvornice — skladište sirovina, linije, gotovi proizvodi.",
-    responsibilities: [
-      "Pretovar paleta s viličarom unutar skladišta i pogona",
-      "Suradnja sa skladištarima i operaterima",
-      "Briga o opremi i sigurnosti"
-    ],
-    requirements: [
-      "Važeća dozvola za viličar",
-      "Iskustvo u sličnom poslu (prednost)",
-      "Pažljivost, odgovornost"
-    ]
-  },
-  {
-    id: "kontrola-kvalitete",
-    title: "Specijalist kontrole kvalitete (QC)",
+    id: "referent-placa",
+    title: "Referent obračuna plaća i računovodstva (m/ž)",
     location: "tvornica",
     type: "Puno radno vrijeme · 1 smjena",
-    summary: "Kontrola kvalitete sirovina i gotovih proizvoda u laboratoriju.",
+    isNew: true,
+    summary: "Obračun plaća i naknada, kadrovska administracija te računovodstveno knjiženje - uz JOPPD i PDV.",
     responsibilities: [
-      "Uzorkovanje i analiza sirovina i šarži",
-      "Vođenje QC dokumentacije",
-      "Suradnja s proizvodnjom i tehnologijom",
-      "Praćenje standarda za europske retailere"
+      "Obračun plaća, naknada plaće i drugih primitaka zaposlenika",
+      "Obračun bolovanja, godišnjih odmora i ostalih vrsta odsutnosti",
+      "Vođenje evidencije radnog vremena i kadrovske administracije",
+      "Prijava i odjava zaposlenika te komunikacija s nadležnim institucijama",
+      "Priprema i predaja JOPPD obrazaca",
+      "Obračun i priprema PDV prijava",
+      "Knjiženje poslovne dokumentacije i usklađivanje evidencija",
+      "Sudjelovanje u pripremi podataka za financijske izvještaje",
+      "Praćenje zakonskih propisa iz područja obračuna plaća i računovodstva",
+      "Suradnja s vanjskim računovodstvom, financijama i ostalim odjelima unutar grupacije"
     ],
     requirements: [
-      "VSS / VŠS kemija ili srodno",
-      "Iskustvo u laboratoriju (prednost)",
-      "Sistematičnost, pažnja na detalje",
-      "Engleski jezik"
+      "SSS ili VŠS ekonomskog usmjerenja",
+      "Iskustvo na poslovima obračuna plaća, računovodstva ili knjigovodstva",
+      "Poznavanje propisa vezanih uz obračun plaća, JOPPD obrasce i PDV",
+      "Dobro poznavanje rada u Excelu",
+      "Iskustvo rada u ERP sustavu predstavlja prednost",
+      "Točnost, organiziranost i odgovornost",
+      "Samostalnost u radu i proaktivnost",
+      "Diskretnost u radu s povjerljivim podacima",
+      "Sposobnost koordinacije više aktivnosti istovremeno"
+    ],
+    offer: [
+      "Jasno definirane radne zadatke i procese",
+      "Strukturirano uvođenje u posao",
+      "Stabilno radno okruženje",
+      "Stalni radni odnos",
+      "Mogućnost profesionalnog razvoja",
+      "Sufinancirani obrok i prijevoz",
+      "Božićnicu, uskrsnicu i nagrade za lojalnost",
+      "Ugodnu i korektnu radnu atmosferu"
     ]
   },
   {
-    id: "rd-kemicar",
-    title: "R&D kemičar",
-    location: "tvornica",
-    type: "Puno radno vrijeme · 1 smjena",
-    summary: "Razvoj novih proizvoda u R&D timu — od ideje do gotove formule.",
-    responsibilities: [
-      "Razvoj novih formulacija (čistila, aerosoli, auto kozmetika, dezinficijensi)",
-      "Eksperimentalni rad u laboratoriju",
-      "Suradnja s tehnologijom kod scale-upa",
-      "Praćenje EU regulative i industrije"
-    ],
-    requirements: [
-      "VSS kemija / kemijsko inženjerstvo",
-      "Iskustvo u R&D-u (prednost, nije uvjet za junior poziciju)",
-      "Engleski — aktivno (čitanje stručne literature)",
-      "Znatiželja i sistematičnost"
-    ]
-  },
-  {
-    id: "scm-specijalist",
-    title: "Specijalist nabave (SCM)",
+    id: "specijalist-poslovni-sustavi",
+    title: "Specijalist za poslovne sustave i planiranje (m/ž)",
     location: "ured",
-    type: "Puno radno vrijeme · 1 smjena",
-    summary: "Nabava sirovina i ambalaže — od dobavljača do dostave u tvornicu.",
+    locLabel: "Donja Dubrava / Zagreb · hibrid",
+    type: "Puno radno vrijeme · Hibridni model",
+    isNew: true,
+    summary: "Planiranje proizvodnje kroz MGERP, razvoj poslovnih sustava (Microsoft Business Central) i optimizacija procesa uz AI alate.",
     responsibilities: [
-      "Pregovaranje s dobavljačima sirovina i ambalaže",
-      "Planiranje nabave po proizvodnom planu",
-      "Praćenje cijena i tržišta",
-      "Suradnja s tehnologijom i proizvodnjom"
+      "Planiranje i praćenje proizvodnje kroz MGERP sustav",
+      "Održavanje i unapređenje podataka potrebnih za planiranje",
+      "Sudjelovanje u implementaciji i razvoju Microsoft Business Centrala",
+      "Testiranje novih funkcionalnosti i poslovnih procesa",
+      "Analiza poslovnih procesa te predlaganje poboljšanja",
+      "Razvoj i unapređenje internih digitalnih alata uz korištenje AI tehnologija",
+      "Izrada izvještaja, analiza i KPI pokazatelja",
+      "Suradnja sa SCM-om, proizvodnjom, nabavom i prodajom",
+      "Koordinacija između korisnika i vanjskih partnera tijekom razvoja sustava",
+      "Aktivno sudjelovanje u projektima digitalizacije i automatizacije poslovanja"
     ],
     requirements: [
-      "VSS ekonomija / SCM / srodno",
-      "Iskustvo u nabavi (prednost u proizvodnji)",
-      "Engleski — aktivno",
-      "Pregovaračke vještine, analitičnost"
+      "VŠS ili VSS (tehnički, informatički, logistički, ekonomski ili srodni smjer)",
+      "Iskustvo u radu s ERP sustavima (prednost: Business Central, Navision, SAP ili slični sustavi)",
+      "Iskustvo u planiranju proizvodnje, SCM-u ili poslovnoj analitici predstavlja prednost",
+      "Napredno korištenje Excela",
+      "Analitičko razmišljanje i sklonost optimizaciji procesa",
+      "Interes za digitalizaciju, automatizaciju i AI alate",
+      "Sposobnost samostalnog rješavanja problema i vođenja projekata",
+      "Aktivno korištenje engleskog jezika",
+      "Odgovornost, organiziranost i proaktivnost"
+    ],
+    offer: [
+      "Ključnu ulogu u digitalnoj transformaciji kompanije",
+      "Rad na razvoju vlastitog sustava za planiranje proizvodnje",
+      "Aktivno sudjelovanje u implementaciji Microsoft Business Centrala",
+      "Mogućnost korištenja najmodernijih AI alata u svakodnevnom radu",
+      "Visoku razinu autonomije i mogućnost utjecaja na poslovne procese",
+      "Stalni radni odnos",
+      "Mogućnost profesionalnog razvoja i napredovanja",
+      "Sufinancirani obrok i prijevoz",
+      "Božićnicu, uskrsnicu i nagrade za lojalnost",
+      "Ugodnu i korektnu radnu atmosferu"
     ]
   },
   {
-    id: "komercijalist",
-    title: "Komercijalist (key account)",
-    location: "ured",
-    type: "Puno radno vrijeme · 1 smjena",
-    summary: "Razvoj odnosa s ključnim kupcima — europski retaileri i partneri.",
+    id: "serviser-autopraonica",
+    title: "Serviser automatskih i samoposlužnih autopraonica (m/ž)",
+    location: "praona",
+    locLabel: "Zagreb · teren",
+    type: "Puno radno vrijeme · terenski rad",
+    isNew: true,
+    summary: "Montaža, servis i održavanje automatskih i samoposlužnih autopraonica - terenski rad za tehnički orijentiranu osobu.",
     responsibilities: [
-      "Razvoj odnosa s ključnim kupcima (Lidl, Kaufland, Spar, dr.)",
-      "Priprema ponuda i pregovori",
-      "Praćenje narudžbi i isporuka",
-      "Putovanja na sajmove i kod kupaca (povremeno)"
+      "Servis i održavanje autopraonica",
+      "Dijagnostika i otklanjanje kvarova (mehaničkih, električnih, elektroničkih) uz podršku kolega i voditelja servisa",
+      "Preventivni pregledi opreme",
+      "Montaža i puštanje u rad nove opreme",
+      "Terenski rad i osnovna servisna dokumentacija"
     ],
     requirements: [
-      "VSS",
-      "Iskustvo u B2B prodaji ili key account-u",
-      "Engleski jezik — fluentno (njemački prednost)",
-      "Komunikativnost, izvršnost"
-    ]
-  },
-  {
-    id: "administrativni-referent",
-    title: "Administrativni referent",
-    location: "ured",
-    type: "Puno radno vrijeme · 1 smjena",
-    summary: "Administrativna podrška uredu — dokumentacija, korespondencija, organizacija.",
-    responsibilities: [
-      "Vođenje administrativne dokumentacije",
-      "Priprema ponuda, narudžbi, izvještaja",
-      "Komunikacija s dobavljačima i kupcima",
-      "Organizacija interna i koordinacija"
+      "SSS ili VŠS tehničkog smjera",
+      "Osnovno znanje elektrotehnike i mehanike",
+      "Poželjno iskustvo u servisu (nije uvjet)",
+      "Vozačka dozvola B kategorije",
+      "Samostalnost i spremnost na terenski rad",
+      "Znanje engleskog jezika",
+      "Prednost: iskustvo s autopraonicama",
+      "Prednost: poznavanje PLC-a, automatike, frekventnih pretvarača i senzorike"
     ],
-    requirements: [
-      "SSS / VŠS",
-      "MS Office (Word, Excel) — solidno",
-      "Engleski — pasivno minimalno",
-      "Urednost, samostalnost"
+    offer: [
+      "Stalan radni odnos u manjem i uhodanom timu",
+      "Redovna i konkurentna primanja uz sufinanciran obrok, božićnicu, uskrsnicu i nagrade za lojalnost",
+      "Službeno vozilo i alat",
+      "Mogućnost dodatne edukacije i napredovanja unutar tvrtke"
     ]
   },
   {
     id: "praonik",
-    title: "Djelatnik na automatskoj praoni",
+    title: "Djelatnik u autopraonici (m/ž)",
     location: "praona",
-    type: "Puno radno vrijeme · 1-2 smjene",
-    summary: "Rad na automatskoj praoni vozila u Zagrebu — primanje gostiju, vođenje praonice, briga o opremi.",
+    locLabel: "Zagreb · Remetinec",
+    type: "Smjene · 40 h tjedno · 1 slobodan dan",
+    isNew: true,
+    summary: "Ručno pranje i čišćenje vozila u autopraonici u Zagrebu. Stabilan posao s redovnim primanjima - iskustvo nije potrebno, sve te naučimo.",
     responsibilities: [
-      "Primanje i naplata usluga",
-      "Vođenje automatske linije i kontrola kvalitete pranja",
-      "Briga o opremi i potrošnom materijalu",
-      "Komunikacija s gostima"
+      "Ručno pranje i čišćenje vozila",
+      "Održavanje urednosti radnog prostora",
+      "Briga o osnovnoj opremi za rad"
     ],
     requirements: [
-      "SSS — bilo koje smjer",
-      "Spremnost na rad u smjenama",
-      "Komunikativnost, urednost",
-      "Bez iskustva — uvodimo te u posao"
+      "Odgovornost i pouzdanost",
+      "Spremnost na timski rad",
+      "Nije potrebno prethodno iskustvo (sve te naučimo)"
+    ],
+    offer: [
+      "Ugovor na neodređeno",
+      "Redovna i sigurna primanja",
+      "Plaćen prijevoz",
+      "Plaćen prekovremeni rad",
+      "Dodatne stimulacije za rad vikendom",
+      "Mogućnost napredovanja"
     ]
+  },
+  {
+    id: "opcenito",
+    title: "Ne vidiš svoju poziciju?",
+    locLabel: "Sve lokacije",
+    type: "Otvorena prijava",
+    isOpen: true,
+    message: "Uvijek tražimo talente u svim našim odjelima - možeš nam se javiti u bilo kojem trenutku, čak i kad pozicija nije službeno objavljena. Dobri ljudi su rijetkost na tržištu, zato svaku prijavu pažljivo pregledamo i sigurno ćemo te čuti."
   }
 ];
 
 const FAQS = [
   {
     q: "Koliko se čeka odgovor nakon prijave?",
-    a: "Zovemo unutar 5 radnih dana. Ako se javljaš za otvorenu poziciju, najčešće je to brže. Ako ne dobiješ poziv u 5 dana — pošalji nam e-mail na karijere@modulazgroup.com i sigurno ćemo provjeriti gdje je zapelo."
+    a: "Zovemo unutar 5 radnih dana. Ako se javljaš za otvorenu poziciju, najčešće je to brže. Ako ne dobiješ poziv u 5 dana - pošalji nam e-mail na karijere@modulazgroup.com i sigurno ćemo provjeriti gdje je zapelo."
   },
   {
     q: "Koje smjene radite?",
@@ -1996,11 +2084,11 @@ const FAQS = [
   },
   {
     q: "Treba li mi iskustvo za rad na liniji?",
-    a: "Ne. Većina naših operatera je krenula bez iskustva. Imamo strukturiran uvod u posao — prvi tjedan radiš uz iskusnog operatera, drugi tjedan pod njegovim nadzorom, a tek onda samostalno."
+    a: "Ne. Većina naših operatera je krenula bez iskustva. Imamo strukturiran uvod u posao - prvi tjedan radiš uz iskusnog operatera, drugi tjedan pod njegovim nadzorom, a tek onda samostalno."
   },
   {
     q: "Što sve dobivam uz osnovnu plaću?",
-    a: "Topli obrok u tvornici, regres, božićnicu, naknadu za godišnji odmor, organiziran prijevoz, zaštitnu opremu, plaćene edukacije i certifikate (uključujući viličar). Detalje primanja prolazimo na razgovoru — uvjeti ovise o poziciji i iskustvu."
+    a: "Topli obrok u tvornici, regres, božićnicu, naknadu za godišnji odmor, organiziran prijevoz, zaštitnu opremu, plaćene edukacije i certifikate (uključujući viličar). Detalje primanja prolazimo na razgovoru - uvjeti ovise o poziciji i iskustvu."
   },
   {
     q: "Što treba ponijeti prvi dan?",
@@ -2008,7 +2096,7 @@ const FAQS = [
   },
   {
     q: "Mogu li napredovati unutar tvrtke?",
-    a: "Da. Većina naših voditelja smjena i timova krenula je iz nižih pozicija. Aktivno promoviramo unutarnje napredovanje — kad otvorimo novu poziciju, prvo gledamo internu ekipu."
+    a: "Da. Većina naših voditelja smjena i timova krenula je iz nižih pozicija. Aktivno promoviramo unutarnje napredovanje - kad otvorimo novu poziciju, prvo gledamo internu ekipu."
   },
   {
     q: "Što ako se ne nađem u objavljenim pozicijama?",
@@ -2028,14 +2116,15 @@ const LOCATION_LABELS = {
 
 // FILTERI
 function renderFilters() {
-  const counts = { sve: POSITIONS.length, tvornica: 0, ured: 0, praona: 0 };
-  POSITIONS.forEach(p => counts[p.location]++);
+  const real = POSITIONS.filter(p => !p.isOpen);
+  const counts = { sve: real.length, tvornica: 0, ured: 0, praona: 0 };
+  real.forEach(p => counts[p.location]++);
   const filters = [
     { key: "sve", label: "Sve pozicije" },
-    { key: "tvornica", label: "Tvornica" },
-    { key: "ured", label: "Ured" },
+    { key: "tvornica", label: "Donja Dubrava" },
+    { key: "ured", label: "Zagreb · ured" },
     { key: "praona", label: "Praona Zagreb" }
-  ];
+  ].filter(f => f.key === "sve" || counts[f.key] > 0);
   const html = filters.map(f => `
     <button class="filter ${f.key === 'sve' ? 'active' : ''}" data-filter="${f.key}">
       ${f.label}<span class="count">${counts[f.key]}</span>
@@ -2054,12 +2143,32 @@ function renderFilters() {
 
 // POZICIJE
 function renderPositions(filter = "sve") {
-  const list = POSITIONS.filter(p => filter === "sve" || p.location === filter);
-  const html = list.map((p, i) => `
+  const list = POSITIONS.filter(p => p.isOpen || filter === "sve" || p.location === filter);
+  const html = list.map((p, i) => {
+    if (p.isOpen) {
+      return `
+    <div class="pos pos-open" data-id="${p.id}">
+      <div class="p-id">+</div>
+      <div class="p-title">${p.title}</div>
+      <div class="p-loc">${p.locLabel || ""}</div>
+      <div class="p-type">${p.type}</div>
+      <div class="p-chev">+</div>
+      <div class="pos-body">
+        <div class="open-msg">
+          <p>${p.message}</p>
+        </div>
+        <div class="apply-row">
+          <p>Pošalji otvorenu prijavu</p>
+          <a href="#prijava" class="btn" data-apply-id="${p.id}" data-apply-title="${p.title}">Prijavi se →</a>
+        </div>
+      </div>
+    </div>`;
+    }
+    return `
     <div class="pos" data-id="${p.id}">
       <div class="p-id">${String(i + 1).padStart(2, "0")}</div>
-      <div class="p-title">${p.title}</div>
-      <div class="p-loc">${LOCATION_LABELS[p.location]}</div>
+      <div class="p-title">${p.title}${p.isNew ? ' <span class="p-badge">Novo</span>' : ''}</div>
+      <div class="p-loc">${p.locLabel || LOCATION_LABELS[p.location]}</div>
       <div class="p-type">${p.type}</div>
       <div class="p-chev">+</div>
       <div class="pos-body">
@@ -2071,25 +2180,26 @@ function renderPositions(filter = "sve") {
           <h4>Što tražimo</h4>
           <ul>${p.requirements.map(r => `<li>${r}</li>`).join("")}</ul>
         </div>
+        ${p.offer ? `<div class="pos-offer"><h4>Što nudimo</h4><ul>${p.offer.map(o => `<li>${o}</li>`).join("")}</ul></div>` : ""}
         <div class="apply-row">
           <p>Zanima te ova pozicija?</p>
           <a href="#prijava" class="btn" data-apply-id="${p.id}" data-apply-title="${p.title}">Prijavi se →</a>
         </div>
       </div>
-    </div>
-  `).join("");
+    </div>`;
+  }).join("");
   document.getElementById("pos-list").innerHTML = html;
 
   // toggle expand
   document.querySelectorAll(".pos").forEach(el => {
     el.addEventListener("click", (e) => {
-      // ignore clicks on apply button — neka radi default link
+      // ignore clicks on apply button - neka radi default link
       if (e.target.closest("[data-apply-id]")) return;
       el.classList.toggle("open");
     });
   });
 
-  // klik na "Prijavi se" — popuni dropdown
+  // klik na "Prijavi se" - popuni dropdown
   document.querySelectorAll("[data-apply-id]").forEach(btn => {
     btn.addEventListener("click", () => {
       const id = btn.dataset.applyId;
@@ -2103,10 +2213,10 @@ function renderPositions(filter = "sve") {
   if (sel) {
     // ostavi prva 2 optiona ("odaberi", "opca prijava")
     while (sel.options.length > 2) sel.remove(2);
-    POSITIONS.forEach(p => {
+    POSITIONS.filter(p => !p.isOpen).forEach(p => {
       const opt = document.createElement("option");
       opt.value = p.id;
-      opt.textContent = `${p.title} · ${LOCATION_LABELS[p.location]}`;
+      opt.textContent = `${p.title} · ${p.locLabel || LOCATION_LABELS[p.location]}`;
       sel.appendChild(opt);
     });
   }
@@ -2192,7 +2302,7 @@ function setupFileInput() {
   });
 }
 
-// FORMA — submit s Formspree
+// FORMA - submit s Formspree
 function setupForm() {
   const form = document.getElementById("apply-form");
   if (!form) return;
@@ -2263,6 +2373,51 @@ function setupReveal() {
   els.forEach(el => io.observe(el));
 }
 
+// REFERRAL MODAL
+function setupReferral() {
+  const modal = document.getElementById("referral-modal");
+  const openBtn = document.getElementById("referral-open");
+  const closeBtn = document.getElementById("referral-close");
+  const form = document.getElementById("referral-form");
+  if (!modal || !openBtn || !form) return;
+
+  const open = () => { modal.hidden = false; document.body.style.overflow = "hidden"; };
+  const close = () => { modal.hidden = true; document.body.style.overflow = ""; };
+  openBtn.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+  modal.addEventListener("click", e => { if (e.target === modal) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) close(); });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector(".form-submit");
+    const success = form.querySelector(".form-success");
+    const error = form.querySelector(".form-error");
+    success.style.display = "none";
+    error.style.display = "none";
+    btn.disabled = true;
+    btn.textContent = "Šaljem...";
+    try {
+      const payload = {
+        kandidat_ime: form.querySelector('[name="kandidat_ime"]').value.trim(),
+        kandidat_kontakt: form.querySelector('[name="kandidat_kontakt"]').value.trim(),
+        tvoje_ime: form.querySelector('[name="tvoje_ime"]').value.trim(),
+        tvoj_kontakt: form.querySelector('[name="tvoj_kontakt"]').value.trim(),
+        poruka: form.querySelector('[name="poruka"]').value.trim()
+      };
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" }
+      });
+      if (res.ok) { success.style.display = "block"; form.reset(); }
+      else error.style.display = "block";
+    } catch { error.style.display = "block"; }
+    btn.disabled = false;
+    btn.textContent = "Pošalji preporuku →";
+  });
+}
+
 // INIT
 renderFilters();
 renderPositions();
@@ -2272,6 +2427,7 @@ setupForm();
 setupReveal();
 setupHeroSlideshow();
 setupDonuts();
+setupReferral();
 </script>
 </body>
 </html>
