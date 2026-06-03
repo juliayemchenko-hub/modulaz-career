@@ -12,7 +12,7 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: "Invalid JSON" }, 400);
   }
 
-  const { ime, prezime, telefon, email, pozicija, poruka, cv_name, cv_data, cv_type } = data;
+  const { ime, prezime, telefon, email, pozicija, lokacija, poruka, cv_name, cv_data, cv_type } = data;
 
   if (!ime || !prezime || !email || !pozicija) {
     return json({ ok: false, error: "Nedostaju obavezni podaci" }, 400);
@@ -48,8 +48,12 @@ export async function onRequestPost(context) {
           <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px;">${telefon || "-"}</td>
         </tr>
         <tr>
-          <td style="padding: 10px 0; color: #666; font-size: 13px;">Pozicija</td>
-          <td style="padding: 10px 0; font-size: 15px;">${pozicija}</td>
+          <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-size: 13px;">Pozicija</td>
+          <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px;">${pozicija}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; color: #666; font-size: 13px;">Lokacija rada</td>
+          <td style="padding: 10px 0; font-size: 15px;">${lokacija || "-"}</td>
         </tr>
       </table>
 
@@ -66,7 +70,10 @@ export async function onRequestPost(context) {
   `;
 
   const payload = {
-    personalizations: [{ to: [{ email: "hr@modulazgroup.com", name: "Modulaz HR" }] }],
+    personalizations: [{ to: [
+      { email: "hr@modulazgroup.com", name: "Modulaz HR" },
+      { email: "julia.yemchenko@modulazgroup.com", name: "Julia Yemchenko" }
+    ] }],
     from: { email: "subscriptions@alfawash.hr", name: "Modulaz Prijave" },
     reply_to: { email: email, name: `${ime} ${prezime}` },
     subject: `Prijava: ${pozicija} - ${ime} ${prezime}`,

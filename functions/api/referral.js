@@ -54,7 +54,10 @@ export async function onRequestPost(context) {
   `;
 
   const payload = {
-    personalizations: [{ to: [{ email: "hr@modulazgroup.com", name: "Modulaz HR" }] }],
+    personalizations: [{ to: [
+      { email: "hr@modulazgroup.com", name: "Modulaz HR" },
+      { email: "julia.yemchenko@modulazgroup.com", name: "Julia Yemchenko" }
+    ] }],
     from: { email: "subscriptions@alfawash.hr", name: "Modulaz Preporuke" },
     reply_to: isEmail(tvoj_kontakt)
       ? { email: tvoj_kontakt.trim(), name: tvoje_ime }

@@ -955,6 +955,7 @@
   @media (max-width: 860px) { footer .f-grid { grid-template-columns: 1fr 1fr; } }
   footer .f-brand .brand-name { color: #fff; font-size: 28px; }
   footer .f-brand .brand-name span { color: var(--mint); }
+  footer .f-brand .footer-logo { height: 32px; width: auto; display: block; }
   footer .f-brand p { margin-top: 16px; color: #999; font-size: 14.5px; max-width: 36ch; }
   footer h5 {
     font-family: var(--f-mono); font-size: 11px;
@@ -1541,9 +1542,9 @@
     </div>
 
     <div class="why-intro">
-      <h2>Stabilna tvrtka. <em>Konkretni</em> uvjeti. Bez bajki.</h2>
+      <h2>Uvjeti koji se <em>ne mijenjaju</em></h2>
       <p class="lead">
-        Nećemo ti pričati o "mladom timu" i "dinamičnom okruženju". Reći ćemo ti što stvarno dobivaš - od prvog dana, na papiru i u praksi.
+        Poslujemo 22 godine i znamo što znači dugoročna suradnja. Svaki zaposlenik od prvog dana dobiva jasne uvjete - konkurentnu plaću, organiziran prijevoz i benefite koji stvarno imaju smisla.
       </p>
     </div>
 
@@ -1659,7 +1660,7 @@
           <li>Popuni formu - ime, telefon, e-mail, pozicija</li>
           <li>Dodaj CV (PDF, Word ili slikan papirnati)</li>
           <li>Zovemo te unutar 5 radnih dana</li>
-          <li>Razgovor u tvornici ili online - kako tebi paše</li>
+          <li>Razgovor uživo ili online</li>
         </ul>
       </div>
 
@@ -1692,6 +1693,14 @@
           </select>
         </div>
         <div class="form-row">
+          <label>Lokacija rada <span class="req">*</span></label>
+          <select name="lokacija" id="form-lokacija" required>
+            <option value="">- odaberi lokaciju -</option>
+            <option value="Donja Dubrava, Međimurje">Donja Dubrava, Međimurje</option>
+            <option value="Zagreb">Zagreb</option>
+          </select>
+        </div>
+        <div class="form-row">
           <label>CV <span class="req">*</span></label>
           <label class="file-input">
             <input type="file" name="cv" accept=".pdf,.doc,.docx,.jpg,.png" required id="cv-input"/>
@@ -1713,15 +1722,15 @@
 
         <button type="submit" class="form-submit">Pošalji prijavu →</button>
         <div class="form-success">Prijava poslana! Javit ćemo ti se uskoro.</div>
-        <div class="form-error">Greška pri slanju. Pokušaj ponovno ili nam piši na <a href="mailto:karijere@modulazgroup.com">karijere@modulazgroup.com</a>.</div>
+        <div class="form-error">Greška pri slanju. Pokušaj ponovno ili nam piši na <a href="mailto:hr@modulazgroup.com">hr@modulazgroup.com</a>.</div>
       </form>
     </div>
 
   </div>
 </section>
 
-<!-- ==================== FAQ ==================== -->
-<section class="faq" id="faq">
+<!-- ==================== FAQ (skriveno) ==================== -->
+<section class="faq" id="faq" hidden>
   <div class="wrap">
     <div class="sec-head">
       <span class="num">07</span>
@@ -1734,8 +1743,8 @@
   </div>
 </section>
 
-<!-- ==================== BROJKE (na dnu) ==================== -->
-<section class="stats">
+<!-- ==================== O NAMA / BROJKE (skriveno) ==================== -->
+<section class="stats" hidden>
   <div class="wrap">
     <div class="sec-head">
       <span class="num">08</span>
@@ -1840,15 +1849,15 @@
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <div class="brand-name">Modulaz <span>karijere</span></div>
+        <img src="modulaz-logo-white.png" alt="Modulaz Group" class="footer-logo">
         <p>Modulaz Group d.o.o. - proizvođač tehničkih aerosola, auto kozmetike, sredstava za čišćenje i dezinficijensa. Od 2002.</p>
       </div>
       <div>
         <h5>Lokacije</h5>
         <ul>
-          <li>Tvornica · Donja Dubrava</li>
-          <li>Ured · Donji Kraljevec</li>
-          <li>Praona · Zagreb</li>
+          <li>Donja Dubrava</li>
+          <li>Sky Office, Zagreb</li>
+          <li>Autopraona, Zagreb</li>
         </ul>
       </div>
       <div>
@@ -1857,14 +1866,12 @@
           <li><a href="https://modulazgroup.com">modulazgroup.com</a></li>
           <li><a href="#pozicije">Otvorene pozicije</a></li>
           <li><a href="#prijava">Prijavi se</a></li>
-          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h5>Kontakt</h5>
         <ul>
-          <li><a href="mailto:karijere@modulazgroup.com">karijere@modulazgroup.com</a></li>
-          <li><a href="tel:+38540688225">+385 40 688 225</a></li>
+          <li><a href="mailto:hr@modulazgroup.com">hr@modulazgroup.com</a></li>
           <li><a href="https://www.facebook.com/Modulaz-group-102747852180440">Facebook</a></li>
           <li><a href="https://www.linkedin.com/company/modulaz-group">LinkedIn</a></li>
         </ul>
@@ -2082,7 +2089,7 @@ const POSITIONS = [
 const FAQS = [
   {
     q: "Koliko se čeka odgovor nakon prijave?",
-    a: "Zovemo unutar 5 radnih dana. Ako se javljaš za otvorenu poziciju, najčešće je to brže. Ako ne dobiješ poziv u 5 dana - pošalji nam e-mail na karijere@modulazgroup.com i sigurno ćemo provjeriti gdje je zapelo."
+    a: "Zovemo unutar 5 radnih dana. Ako se javljaš za otvorenu poziciju, najčešće je to brže. Ako ne dobiješ poziv u 5 dana - pošalji nam e-mail na hr@modulazgroup.com i sigurno ćemo provjeriti gdje je zapelo."
   },
   {
     q: "Koje smjene radite?",
@@ -2348,6 +2355,7 @@ function setupForm() {
         telefon: form.querySelector('[name="telefon"]').value.trim(),
         email: form.querySelector('[name="email"]').value.trim(),
         pozicija: form.querySelector('[name="pozicija"]').value,
+        lokacija: form.querySelector('[name="lokacija"]').value,
         poruka: form.querySelector('[name="poruka"]').value.trim(),
         cv_name, cv_data, cv_type
       };
