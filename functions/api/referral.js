@@ -1,19 +1,21 @@
-exports.handler = async (event) => {
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
-  }
+// Cloudflare Pages Function -> POST /api/referral
+const json = (obj, status = 200) =>
+  new Response(JSON.stringify(obj), { status, headers: { "Content-Type": "application/json" } });
+
+export async function onRequestPost(context) {
+  const { request, env } = context;
 
   let data;
   try {
-    data = JSON.parse(event.body);
+    data = await request.json();
   } catch {
-    return { statusCode: 400, body: JSON.stringify({ ok: false, error: "Invalid JSON" }) };
+    return json({ ok: false, error: "Invalid JSON" }, 400);
   }
 
   const { kandidat_ime, kandidat_kontakt, tvoje_ime, tvoj_kontakt, poruka } = data;
 
   if (!kandidat_ime || !tvoje_ime || !tvoj_kontakt) {
-    return { statusCode: 400, body: JSON.stringify({ ok: false, error: "Nedostaju obavezni podaci" }) };
+    return json({ ok: false, error: "Nedostaju obavezni podaci" }, 400);
   }
 
   const isEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((s || "").trim());
@@ -21,7 +23,7 @@ exports.handler = async (event) => {
   const htmlBody = `
     <div style="font-family: Arial, sans-serif; max-width: 620px; color: #1a1a1a;">
       <div style="background: #FAFFD6; border-bottom: 2px solid #1a1a1a; padding: 16px 24px; margin-bottom: 24px;">
-        <strong style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Nova preporuka kandidata — Modulaz Group</strong>
+        <strong style="font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;">Nova preporuka kandidata - Modulaz Group</strong>
       </div>
 
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
@@ -31,7 +33,7 @@ exports.handler = async (event) => {
         </tr>
         <tr>
           <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-size: 13px;">Kontakt kandidata</td>
-          <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px;">${kandidat_kontakt || "—"}</td>
+          <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px;">${kandidat_kontakt || "-"}</td>
         </tr>
         <tr>
           <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-size: 13px;">Preporučio/la</td>
@@ -65,21 +67,18 @@ exports.handler = async (event) => {
     const res = await fetch("https://api.sendgrid.com/v3/mail/send", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.SENDGRID_API_KEY}`,
+        "Authorization": `Bearer ${env.SENDGRID_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(payload)
     });
 
-    if (res.status === 202) {
-      return { statusCode: 200, body: JSON.stringify({ ok: true }) };
-    } else {
-      const errText = await res.text();
-      console.error("SendGrid error:", res.status, errText);
-      return { statusCode: 500, body: JSON.stringify({ ok: false }) };
-    }
+    if (res.status === 202) return json({ ok: true });
+    const errText = await res.text();
+    console.error("SendGrid error:", res.status, errText);
+    return json({ ok: false }, 500);
   } catch (err) {
     console.error("Fetch error:", err);
-    return { statusCode: 500, body: JSON.stringify({ ok: false }) };
+    return json({ ok: false }, 500);
   }
-};
+}

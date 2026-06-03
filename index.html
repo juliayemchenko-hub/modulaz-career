@@ -1663,7 +1663,7 @@
         </ul>
       </div>
 
-      <form class="form-card" id="apply-form" method="POST" action="/.netlify/functions/apply">
+      <form class="form-card" id="apply-form" method="POST" action="/api/apply">
         <div class="form-row split">
           <div>
             <label>Ime <span class="req">*</span></label>
@@ -1805,7 +1805,7 @@
     <button class="modal-close" id="referral-close" type="button" aria-label="Zatvori">×</button>
     <h3 id="referral-title">Preporuči <em>kandidata</em></h3>
     <p class="modal-sub">Ako se osoba zaposli i ostane 3 mjeseca - dobiješ nagradu. Ispuni par podataka i mi preuzimamo dalje.</p>
-    <form class="referral-form" id="referral-form" method="POST" action="/.netlify/functions/referral">
+    <form class="referral-form" id="referral-form" method="POST" action="/api/referral">
       <div class="form-row">
         <label>Koga preporučuješ? <span class="req">*</span></label>
         <input type="text" name="kandidat_ime" required placeholder="Ime i prezime kandidata" />
