@@ -2188,7 +2188,7 @@ const FAQS = [
    ============================================================ */
 
 const LOCATION_LABELS = {
-  tvornica: "Donja Dubrava",
+  tvornica: "Donja Dubrava, Međimurje",
   ured: "Donji Kraljevec",
   praona: "Zagreb · praona"
 };
@@ -2200,7 +2200,7 @@ function renderFilters() {
   real.forEach(p => counts[p.location]++);
   const filters = [
     { key: "sve", label: "Sve pozicije" },
-    { key: "tvornica", label: "Donja Dubrava" },
+    { key: "tvornica", label: "Donja Dubrava, Međimurje" },
     { key: "ured", label: "Zagreb · ured" },
     { key: "praona", label: "Praona Zagreb" }
   ].filter(f => f.key === "sve" || counts[f.key] > 0);
