@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Oglas - Administrator narudžbi i logistike</title>
+<style>
+  @font-face { font-family:"Europa"; src:url("fonts/EuropaLight.ttf") format("truetype"); font-weight:300; font-display:swap; }
+  @font-face { font-family:"Europa"; src:url("fonts/EuropaRegular.ttf") format("truetype"); font-weight:400; font-display:swap; }
+  @font-face { font-family:"Europa"; src:url("fonts/EuropaBold.ttf") format("truetype"); font-weight:700; font-display:swap; }
+  :root{ --mint-deep:#7CE08F; --f:"Europa",system-ui,sans-serif; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--f);background:#333;display:flex;flex-direction:column;align-items:center;gap:30px;padding:30px}
+  .hint{color:#ccc;font-size:14px;text-align:center;max-width:1080px;line-height:1.5}
+
+  .slide{position:relative;width:1080px;height:1080px;overflow:hidden;background:#0a0a0a;background-size:cover;background-position:center;flex-shrink:0}
+  .slide::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(105deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.2) 100%),
+               linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 52%);}
+  .slide .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:76px}
+  .badge{align-self:flex-start;background:var(--mint-deep);color:#0a0a0a;font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;margin-bottom:26px}
+  .eyebrow{font-size:23px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mint-deep)}
+  .title{font-size:78px;font-weight:700;line-height:1.02;letter-spacing:-.02em;color:#fff;margin:18px 0 26px;max-width:17ch}
+  .title.big{font-size:96px}
+  .meta{font-size:32px;color:rgba(255,255,255,.9);font-weight:300;line-height:1.4}
+  .chips{display:flex;flex-direction:column;gap:15px;align-items:flex-start}
+  .chip{border:1.5px solid rgba(255,255,255,.55);color:#fff;font-size:29px;padding:15px 24px;background:rgba(255,255,255,.08);line-height:1.2}
+  .cta-url{font-size:36px;color:var(--mint-deep);font-weight:700;margin-top:10px}
+  .logo{position:absolute;top:60px;left:76px;z-index:3;height:40px;width:auto}
+  .pageno{position:absolute;top:64px;right:76px;z-index:3;color:#fff;font-size:24px;font-weight:700;letter-spacing:.08em;opacity:.85}
+  .swipe{position:absolute;bottom:76px;right:76px;z-index:3;color:#fff;font-size:26px;font-weight:700;opacity:.9}
+</style>
+</head>
+<body>
+<div class="hint">Oglas - 3 slajda 1080×1080. Skrolaj i screenshotaj svaki (ili izvezi node).</div>
+<div id="deck"></div>
+
+<script>
+const LOGO="modulaz-logo-white.png";
+const SLIDES=[
+  {
+    photo:"photos/ured-alfacare-radno-mjesto.jpg", page:"01",
+    badge:"Novo · zapošljavamo",
+    eyebrow:"Donja Dubrava · puno radno vrijeme",
+    title:"Administrator narudžbi i logistike <span style='color:var(--mint-deep)'>(m/ž)</span>",
+    meta:"1 smjena · stalni radni odnos · ured u Donjoj Dubravi",
+    swipe:"Swipe →"
+  },
+  {
+    photo:"photos/operater-nadzor.jpg", page:"02",
+    eyebrow:"Što radiš",
+    title:"Vodiš narudžbe od <span style='color:var(--mint-deep)'>kupca do isporuke</span>",
+    chips:[
+      "Zaprimanje i obrada narudžbi kupaca",
+      "Praćenje narudžbi u ERP sustavu",
+      "Koordinacija rokova isporuke s proizvodnjom",
+      "Organizacija transporta i logistike",
+      "Komunikacija s kupcima i prijevoznicima"
+    ]
+  },
+  {
+    photo:"photos/tvornica-panorama.jpg", page:"03",
+    eyebrow:"Tražimo te ako si",
+    title:"Točan/na i <span style='color:var(--mint-deep)'>organiziran/a</span>",
+    chips:[
+      "SSS / VŠS - ekonomski, logistički ili srodni smjer",
+      "Dobro poznavanje Excela + spremnost na ERP",
+      "Engleski u pisanoj komunikaciji",
+      "Iskustvo u administraciji/logistici je prednost"
+    ],
+    url:"Prijavi se → careers.modulazgroup.com"
+  }
+];
+
+document.getElementById("deck").innerHTML=SLIDES.map(s=>`
+  <div class="slide" style="background-image:url('${s.photo}')">
+    <img class="logo" src="${LOGO}" alt="Modulaz">
+    <div class="pageno">${s.page} / 03</div>
+    <div class="inner">
+      ${s.badge?`<div class="badge">${s.badge}</div>`:""}
+      <div class="eyebrow">${s.eyebrow}</div>
+      <div class="title ${s.meta?'big':''}">${s.title}</div>
+      ${s.meta?`<div class="meta">${s.meta}</div>`:""}
+      ${s.chips?`<div class="chips">${s.chips.map(c=>`<div class="chip">${c}</div>`).join("")}</div>`:""}
+      ${s.url?`<div class="cta-url">${s.url}</div>`:""}
+    </div>
+    ${s.swipe?`<div class="swipe">${s.swipe}</div>`:""}
+  </div>`).join("");
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Post - Specijalist za poslovne sustave</title>
+<style>
+  @font-face { font-family:"Europa"; src:url("fonts/EuropaRegular.ttf") format("truetype"); font-weight:400; font-display:swap; }
+  @font-face { font-family:"Europa"; src:url("fonts/EuropaBold.ttf") format("truetype"); font-weight:700; font-display:swap; }
+  @font-face { font-family:"Europa"; src:url("fonts/EuropaLight.ttf") format("truetype"); font-weight:300; font-display:swap; }
+  :root{ --mint-deep:#7CE08F; --f:"Europa",system-ui,sans-serif; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--f);background:#333;display:flex;flex-direction:column;align-items:center;gap:30px;padding:30px}
+  .hint{color:#ccc;font-size:14px;text-align:center}
+  .slide{position:relative;width:1080px;height:1080px;overflow:hidden;background:#0a0a0a;background-size:cover;background-position:center;flex-shrink:0}
+  .slide::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(105deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.2) 100%),
+               linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 52%);}
+  .inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:80px}
+  .logo{position:absolute;top:60px;left:80px;z-index:3;height:42px;width:auto}
+  .title{font-size:72px;font-weight:700;line-height:1.04;letter-spacing:-.02em;color:#fff;max-width:16ch}
+  .title em{font-style:normal;color:var(--mint-deep)}
+  .badge{align-self:flex-start;background:var(--mint-deep);color:#0a0a0a;font-size:24px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;margin-bottom:28px}
+  .loc-box{align-self:flex-start;margin-top:34px;border:1.5px solid rgba(255,255,255,.75);color:#fff;font-size:30px;font-weight:400;padding:16px 28px;background:rgba(255,255,255,.06);letter-spacing:.02em}
+  .phrase{font-size:90px;font-weight:700;line-height:1.0;letter-spacing:-.025em;color:#fff;margin-bottom:40px;max-width:14ch}
+  .phrase em{font-style:normal;color:var(--mint-deep)}
+  .eyebrow{font-size:23px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mint-deep);margin-bottom:18px}
+  .tags{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .tag{border:1.5px solid rgba(255,255,255,.75);color:#fff;font-size:30px;padding:15px 26px;background:rgba(255,255,255,.06);line-height:1.2}
+</style>
+</head>
+<body>
+<div class="hint">Post: Specijalist za poslovne sustave - 2 slajda 1080×1080</div>
+<div id="deck"></div>
+<script>
+const LOGO="modulaz-logo-white.png";
+const SLIDES=[
+  { type:"naslov", photo:"photos/alfacare-brake-cleaner-linija.jpg", badge:"Novo - zapošljavamo", title:"Specijalist za <em>poslovne sustave i planiranje</em> (m/ž)", loc:"Lokacija: Donja Dubrava / Zagreb" },
+  { type:"opis", photo:"photos/proizvodnja-scaligera-w5.jpg", eyebrow:"Što radiš", phrase:"Digitalna transformacija <em>u praksi</em>",
+    tags:["Implementacija Microsoft Business Central","Planiranje proizvodnje","Analiza poslovnih procesa","AI alati i automatizacija"] }
+];
+document.getElementById("deck").innerHTML=SLIDES.map(s=>`
+  <div class="slide" style="background-image:url('${s.photo}')">
+    <img class="logo" src="${LOGO}" alt="Modulaz">
+    <div class="inner">
+      ${s.type==="naslov"
+        ? `${s.badge?`<div class="badge">${s.badge}</div>`:""}<div class="title">${s.title}</div><div class="loc-box">${s.loc}</div>`
+        : `<div class="eyebrow">${s.eyebrow}</div><div class="phrase">${s.phrase}</div><div class="tags">${s.tags.map(t=>`<div class="tag">${t}</div>`).join("")}</div>`}
+    </div>
+  </div>`).join("");
+</script>
+</body>
+</html>
