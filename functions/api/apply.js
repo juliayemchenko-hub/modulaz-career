@@ -72,7 +72,10 @@ export async function onRequestPost(context) {
   const payload = {
     personalizations: [{ to: [
       { email: "hr@modulazgroup.com", name: "Modulaz HR" },
-      { email: "julia.yemchenko@modulazgroup.com", name: "Julia Yemchenko" }
+      { email: "julia.yemchenko@modulazgroup.com", name: "Julia Yemchenko" },
+      { email: "kristina.mihokovic@modulazgroup.com", name: "Kristina Mihokovic" },
+      { email: "nino.matijasic@modulazgroup.com", name: "Nino Matijasic" },
+      { email: "arian.okresa@modulazgroup.com", name: "Arian Okresa" }
     ] }],
     from: { email: "subscriptions@alfawash.hr", name: "Modulaz Prijave" },
     reply_to: { email: email, name: `${ime} ${prezime}` },
