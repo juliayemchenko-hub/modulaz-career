@@ -55,11 +55,7 @@ export async function onRequestPost(context) {
 
   const payload = {
     personalizations: [{ to: [
-      { email: "hr@modulazgroup.com", name: "Modulaz HR" },
-      { email: "julia.yemchenko@modulazgroup.com", name: "Julia Yemchenko" },
-      { email: "kristina.mihokovic@modulazgroup.com", name: "Kristina Mihokovic" },
-      { email: "nino.matijasic@modulazgroup.com", name: "Nino Matijasic" },
-      { email: "arian.okresa@modulazgroup.com", name: "Arian Okresa" }
+      { email: "hr@modulazgroup.com", name: "Modulaz HR" }
     ] }],
     from: { email: "subscriptions@alfawash.hr", name: "Modulaz Preporuke" },
     reply_to: isEmail(tvoj_kontakt)
