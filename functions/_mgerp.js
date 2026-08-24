@@ -6,10 +6,15 @@
 // entry for a public origin.
 //
 // Configure in the Cloudflare Pages project (Settings -> Environment variables):
-//   MGERP_API_URL       e.g. https://mgerp.org/api/v1   (optional, this is the default)
+//   MGERP_API_URL       e.g. https://api.mgerp.org/api/v1  (optional, this is the default)
 //   MGERP_INGEST_SECRET the same value as RECRUITMENT_INGEST_SECRET in MGERP
 
-const DEFAULT_API_URL = "https://mgerp.org/api/v1";
+// api.mgerp.org, NOT mgerp.org: the bare host serves the MGERP single-page app,
+// whose catch-all answers /api/v1/* with index.html and a 200. That would sail
+// past the res.ok check below and die in JSON.parse — and because the callers
+// swallow ingest failures so a submission is never lost, every application
+// would vanish silently while the candidate was told it had been sent.
+const DEFAULT_API_URL = "https://api.mgerp.org/api/v1";
 
 export function mgerpConfigured(env) {
   return !!(env && env.MGERP_INGEST_SECRET);
