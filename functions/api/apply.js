@@ -1,6 +1,37 @@
 // Cloudflare Pages Function -> POST /api/apply
+import { base64ToBlob, mgerpConfigured, mgerpFetch } from "../_mgerp.js";
+
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), { status, headers: { "Content-Type": "application/json" } });
+
+/**
+ * File the application in MGERP, where HR works through it.
+ *
+ * Never allowed to fail the request: the e-mail below is what HR sees first,
+ * and a candidate who filled in the form should not be told to try again
+ * because the ERP happened to be redeploying. A failure is logged and the
+ * submission still lands in the inbox.
+ */
+async function fileInMgerp(env, data, positionLabel) {
+  if (!mgerpConfigured(env)) return;
+  try {
+    const form = new FormData();
+    form.set("positionSlug", data.pozicija || "");
+    form.set("positionTitle", positionLabel);
+    form.set("firstName", data.ime);
+    form.set("lastName", data.prezime);
+    form.set("email", data.email);
+    if (data.telefon) form.set("phone", data.telefon);
+    if (data.lokacija) form.set("workLocation", data.lokacija);
+    if (data.poruka) form.set("message", data.poruka);
+    if (data.cv_data && data.cv_name) {
+      form.set("cv", base64ToBlob(data.cv_data, data.cv_type), data.cv_name);
+    }
+    await mgerpFetch(env, "/recruitment/ingest/apply", { method: "POST", body: form });
+  } catch (err) {
+    console.error("MGERP apply forward failed:", err);
+  }
+}
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -17,6 +48,8 @@ export async function onRequestPost(context) {
   if (!ime || !prezime || !email || !pozicija) {
     return json({ ok: false, error: "Nedostaju obavezni podaci" }, 400);
   }
+
+  await fileInMgerp(env, data, pozicija);
 
   const attachments = [];
   if (cv_data && cv_name) {

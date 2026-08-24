@@ -1,6 +1,28 @@
 // Cloudflare Pages Function -> POST /api/referral
+import { mgerpConfigured, mgerpFetch } from "../_mgerp.js";
+
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), { status, headers: { "Content-Type": "application/json" } });
+
+/** Same posture as the apply form: MGERP is the record, the e-mail is the
+ *  notification, and a failure here must not cost the referrer their entry. */
+async function fileInMgerp(env, data) {
+  if (!mgerpConfigured(env)) return;
+  try {
+    await mgerpFetch(env, "/recruitment/ingest/referral", {
+      method: "POST",
+      body: {
+        candidateName: data.kandidat_ime,
+        candidateContact: data.kandidat_kontakt || undefined,
+        referrerName: data.tvoje_ime,
+        referrerContact: data.tvoj_kontakt,
+        message: data.poruka || undefined,
+      },
+    });
+  } catch (err) {
+    console.error("MGERP referral forward failed:", err);
+  }
+}
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -17,6 +39,8 @@ export async function onRequestPost(context) {
   if (!kandidat_ime || !tvoje_ime || !tvoj_kontakt) {
     return json({ ok: false, error: "Nedostaju obavezni podaci" }, 400);
   }
+
+  await fileInMgerp(env, data);
 
   const isEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((s || "").trim());
 

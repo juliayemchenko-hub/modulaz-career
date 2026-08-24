@@ -1919,7 +1919,11 @@
    SADRŽAJ - JE TU. NE TREBA NIŠTA DRUGO DIRATI.
    ============================================================ */
 
-const POSITIONS = [
+// Ugrađeni popis je i dalje ono što se prvo iscrta - izgled stranice je
+// identičan i kad MGERP nije dostupan. Ako jest, popis se osvježi iz njega
+// (vidi loadPositions() na dnu), pa se pozicije otvaraju i zatvaraju u MGERP-u
+// umjesto izmjenom ove datoteke.
+let POSITIONS = [
   {
     id: "operater-proizvodnja",
     title: "Operater u proizvodnji (m/ž)",
@@ -2614,9 +2618,33 @@ function setupReferral() {
   });
 }
 
+// Dohvat aktivnih pozicija iz MGERP-a preko /api/positions (Cloudflare Function
+// koja drži ključ). Vraća true samo ako je stigao upotrebljiv popis - svaka
+// greška znači da ostaje ugrađeni popis i stranica se ne mijenja.
+async function loadPositions() {
+  try {
+    const res = await fetch("/api/positions", { headers: { Accept: "application/json" } });
+    if (!res.ok) return false;
+    const json = await res.json();
+    if (!Array.isArray(json.data) || json.data.length === 0) return false;
+    POSITIONS = json.data;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 // INIT
+// Prvo se iscrta ugrađeni popis (bez čekanja mreže, isti prvi prikaz kao i
+// dosad), pa se tek onda po potrebi osvježi podacima iz MGERP-a.
 renderFilters();
 renderPositions();
+loadPositions().then(changed => {
+  if (changed) {
+    renderFilters();
+    renderPositions();
+  }
+});
 renderFaq();
 setupFileInput();
 setupForm();
