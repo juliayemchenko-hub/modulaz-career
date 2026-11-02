@@ -1976,6 +1976,10 @@ let POSITIONS = [
   },
   {
     id: "radnik-mjesaona",
+    // Objavljeno izravno na stranici, bez MGERP-a: ostaje vidljivo i kad
+    // popis dolazi iz MGERP-a (vidi loadPositions()). Kad se pozicija otvori
+    // u MGERP-u ili zatvori, makni "pinned" ili cijeli unos.
+    pinned: true,
     title: "Radnik/ica u mješaoni kemijskih sredstava (m/ž)",
     location: "tvornica",
     type: "Puno radno vrijeme · smjenski rad",
@@ -2664,7 +2668,11 @@ async function loadPositions() {
     if (!res.ok) return false;
     const json = await res.json();
     if (!Array.isArray(json.data) || json.data.length === 0) return false;
-    POSITIONS = json.data;
+    // Pozicije označene s "pinned" u ugrađenom popisu ostaju vidljive i kad ih
+    // MGERP ne vraća - tako se pozicija može objaviti bez MGERP-a.
+    const ids = new Set(json.data.map(p => p.id));
+    const pinned = POSITIONS.filter(p => p.pinned && !ids.has(p.id));
+    POSITIONS = [...pinned, ...json.data];
     return true;
   } catch {
     return false;
